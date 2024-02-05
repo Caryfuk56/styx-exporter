@@ -1,0 +1,9 @@
+{[ const brandId = context /]}
+{[ const bordersTokens = ds.tokensByType("Border", brandId) /]}
+:root {
+{[ for token in bordersTokens ]}
+{[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
+{[ inject "render-group-name" context tokenGroup /]}
+  --{[ inject "name-render" context token /]}: {[ inject "border-value-render" context token /]};
+{[/]}
+}

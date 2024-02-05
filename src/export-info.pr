@@ -1,0 +1,17 @@
+{[ const allBrands = ds.allBrands() /]}
+{[ const currentDate = currentDate() /]}
+
+{[ inject "info-header" context ds /]}
+
+
+{{ "Vyexportováno: " }}{{ currentDate }}
+
+{{ "-------------------------------------------" }}
+
+{{ "DOSTUPNÁ TÉMATA"}}
+
+{[ for brand in allBrands ]}
+{{ "* " }}{{ brand.name }}
+{{ " - Persistant id: " }}{{ brand.persistentId }}
+{{ " - Id: " }}{{ brand.id }}
+{[/]}

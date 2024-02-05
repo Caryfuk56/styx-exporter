@@ -1,0 +1,8 @@
+import * as stylex from "@stylexjs/stylex";
+
+export const {{ context.variable }} = stylex({
+{[ switch context.variable ]}
+{[ case "colors" ]}{[ inject "stylex-variables-renderer" context { "id": context.id, "type": "Color" } /]}
+{[ case "measures" ]}{[ inject "stylex-variables-renderer" context { "id": context.id, "type": "Measure" } /]}
+{[/]}
+});

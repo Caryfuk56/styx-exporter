@@ -1,0 +1,1 @@
+{[ inject "render-measure-value" context context.value.width /]} {{ context.value.position }}

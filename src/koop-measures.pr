@@ -1,0 +1,5 @@
+{* Generate all MEASURES tokens for the KOOP theme *}
+{[ const brandId = getBrandId(brandNames.koop, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.koop, "id": brandId, "type": "measures" } /]}
+
+{[ inject "measures-renderer" context brandId /]}

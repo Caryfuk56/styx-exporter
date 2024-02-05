@@ -1,0 +1,6 @@
+:root {
+{[ for token in ds.tokensByType("Color", context.id) ]}
+    --{[ inject "name-render" context token /]}: {[ inject "hsl-colors" context token /]};
+
+{[/]}
+}

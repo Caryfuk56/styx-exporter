@@ -1,0 +1,5 @@
+{* Generate MEASURES stylex tokens for VIGo theme *}
+{[ const brandId = getBrandId(brandNames.vigo, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.vigo, "id": brandId, "type": "measures" } /]}
+
+{[ inject "stylex-render" context { "id": brandId, "variable": "measures" } /]}

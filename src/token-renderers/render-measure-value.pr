@@ -1,0 +1,9 @@
+{[ inject "reference-wrapper" context context ]}
+{[ let unit = "px" /]}
+{[ switch context.unit ]}
+{[ case "Points" ]}{[ set unit = "pt" /]}
+{[ case "Percent" ]}{[ set unit = "%" /]}
+{[ case "Ems" ]}{[ set unit = "em" /]}
+{[/]}
+{{ context.measure }}{{ unit }}
+{[/]}

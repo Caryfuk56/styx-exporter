@@ -1,0 +1,5 @@
+{* Generate all COLORS tokens for the KOOP theme *}
+{[ const brandId = getBrandId(brandNames.koop, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.koop, "id": brandId, "type": "colors" } /]}
+
+{[ inject "colors-renderer" context { "id": brandId } /]}

@@ -1,0 +1,3 @@
+{[ const tokenGroup = ds.tokenGroupContainingTokenId(context.id) /]}
+{[ const tokenName = stylexTokenName(context, tokenGroup) /]}
+{{ tokenName }}
