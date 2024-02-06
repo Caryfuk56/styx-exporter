@@ -76,6 +76,9 @@ export const exportedFileName = (type: string, brand: string): string => {
     case "borders":
       file = "_borders.css";
       break;
+    case "gradients":
+      file = "_gradients.css";
+      break;
     default:
       console.log("File header comment ERROR: file type \"" + type + "\" doesn't exist.");
       break;
@@ -90,6 +93,12 @@ export const exportedFileName = (type: string, brand: string): string => {
       break;
     case brandNames.koop:
       folder = "koop";
+      break;
+    case brandNames.knz:
+      folder = "knz";
+      break;
+    case brandNames.sus:
+      folder = "sus";
       break;
     default:
       console.log("File header comment ERROR: brand name \"" + brand + "\" doesn't exist.");
@@ -256,3 +265,19 @@ export const toLowerCase = (str: string): string => {
 export const joinArrayBySlash = (strArr: string[]): string => {
   return strArr.join(" / ");
 }
+
+type Vector2 = {
+  x: number;
+  y: number;
+}
+
+export const gradientAngle = (from: Vector2, to: Vector2): number => {
+  const deltaX = to.x - from.x;
+  const deltaY = to.y - from.y;
+
+  const radians = Math.atan2(deltaY, deltaX);
+  const result = (radians * 180) / Math.PI;
+  const fixedResult = result + 90;
+
+  return (fixedResult < 0 ? fixedResult + 360 : fixedResult) % 360;
+};

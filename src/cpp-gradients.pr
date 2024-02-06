@@ -1,0 +1,11 @@
+{* Generate all GRADIENTS css var tokens for CPP theme. *}
+{[ const bId = getBrandId(brandNames.cpp, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.cpp, "id": bId, "type": "gradients" } /]}
+
+:root {
+{[ const tokensByType = ds.tokensByType("Gradient", bId) /]}
+{[ for token in tokensByType ]}
+  --{[ inject "name-render" context token /]}:  {[ inject "gradient-renderer" context token /]};
+
+{[/]}
+}

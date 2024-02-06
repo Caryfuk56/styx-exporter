@@ -1,0 +1,5 @@
+{* Generate borders tokens for CPP theme. *}
+{[ const brandId = getBrandId(brandNames.cpp, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.cpp, "id": brandId, "type": "borders" } /]}
+
+{[ inject "borders-renderer" context brandId /]}

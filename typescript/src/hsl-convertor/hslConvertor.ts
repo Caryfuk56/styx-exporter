@@ -1,5 +1,11 @@
 import { calculateHue, calculateLightness, calculateSaturation, stringHSL, stringHSLA } from "./helpers";
 
+/**
+ * Converts a color object to an HSL or HSLA string representation.
+ * 
+ * @param {ColorTokenValue} color - The color object to convert.
+ * @returns The HSL or HSLA string representation of the color.
+ */
 const hslConvertor = (color: ColorTokenValue) => {
   const { r: _r, g: _g, b: _b, a: _a } = color;
 
@@ -19,7 +25,7 @@ const hslConvertor = (color: ColorTokenValue) => {
   const lightness = +(_lightness * 100).toFixed(1);
   const saturation = +(_saturation * 100).toFixed(1);
 
-  return a === 1 ? stringHSL(hue, saturation, lightness) : stringHSLA(hue, saturation, lightness, a);
+   return a === 1 ? stringHSL(hue, saturation, lightness) : stringHSLA(hue, saturation, lightness, a);
 };
 
 export default hslConvertor;

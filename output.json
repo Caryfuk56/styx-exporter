@@ -21,12 +21,24 @@
       "write_to": "vigo/borders.css"
     },
     {
+      "invoke": "vigo-gradients.pr",
+      "write_to": "vigo/gradients.css"
+    },
+    {
       "invoke": "koop-colors.pr",
       "write_to": "koop/colors.css"
     },
     {
       "invoke": "koop-measures.pr",
       "write_to": "koop/measures.css"
+    },
+    {
+      "invoke": "koop-borders.pr",
+      "write_to": "koop/borders.css"
+    },
+    {
+      "invoke": "koop-gradients.pr",
+      "write_to": "koop/gradients.css"
     },
     {
       "invoke": "cpp-colors.pr",
@@ -37,12 +49,56 @@
       "write_to": "cpp/measures.css"
     },
     {
+      "invoke": "cpp-borders.pr",
+      "write_to": "cpp/borders.css"
+    },
+    {
+      "invoke": "cpp-gradients.pr",
+      "write_to": "cpp/gradients.css"
+    },
+    {
+      "invoke": "knz-colors.pr",
+      "write_to": "knz/colors.css"
+    },
+    {
+      "invoke": "knz-measures.pr",
+      "write_to": "knz/measures.css"
+    },
+    {
+      "invoke": "knz-borders.pr",
+      "write_to": "knz/borders.css"
+    },
+    {
+      "invoke": "knz-gradients.pr",
+      "write_to": "knz/gradients.css"
+    },
+    {
+      "invoke": "sus-colors.pr",
+      "write_to": "sus/colors.css"
+    },
+    {
+      "invoke": "sus-measures.pr",
+      "write_to": "sus/measures.css"
+    },
+    {
+      "invoke": "sus-borders.pr",
+      "write_to": "sus/borders.css"
+    },
+    {
+      "invoke": "sus-gradients.pr",
+      "write_to": "sus/gradients.css"
+    },
+    {
       "invoke": "stylex-colors.pr",
       "write_to": "stylex/colors.stylex.ts"
     },
     {
       "invoke": "stylex-measures.pr",
       "write_to": "stylex/measures.stylex.ts"
+    },
+    {
+      "invoke": "stylex-gradients.pr",
+      "write_to": "stylex/gradients.stylex.ts"
     }
   ]
 }

@@ -1,1 +1,2 @@
+{[ const test = printOutput(context.value.width) /]}
 {[ inject "render-measure-value" context context.value.width /]} {{ context.value.position }}

@@ -8,6 +8,7 @@
 {[ case "colors" ]}{[ type = "COLORS" /]}
 {[ case "measures" ]}{[ type = "MEASURES" /]}
 {[ case "borders" ]}{[ type = "BORDERS" /]}
+{[ case "gradients" ]}{[ type = "GRADIENTS" /]}
 {[ default]}{[ type = "<UNKNOWN>" /]}
 {[/]}
 /*
