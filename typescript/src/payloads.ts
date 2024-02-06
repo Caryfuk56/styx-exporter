@@ -16,3 +16,9 @@ export const behavior = {
   shadowTokenPrefix: "shadow",
   typographyTokenPrefix: "typography",
 };
+
+export const stylexCategories = [
+  "core",
+  "semantic",
+  "component"
+] as const;

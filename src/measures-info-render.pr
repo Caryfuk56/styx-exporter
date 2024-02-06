@@ -1,0 +1,48 @@
+INFORMATION ABOUT MEASURES GROUPS
+
+1st level of the groups of tokenGroupsOfType
+============================================
+
+
+{[ const currentBrand = ds.currentBrand() /]}
+{[ const groups = ds.tokenGroupsOfType("Measure", currentBrand.id) /]}
+{[ const tokensByType = ds.tokensByType("Measure", currentBrand.id) /]}
+{[ let totalTokens = 0 /]}
+
+{[ for group in groups[0].subgroups ]}
+{[ const tokens = filterTokens(group.name, tokensByType) /]}
+{[ totalTokens = (totalTokens + tokens.length) /]}
+- {{ group.name }}: {{ tokens.length }}
+
+{[/]}
+
+totalTokens: {{ totalTokens }}
+
+Manually defined categories for new grouping.
+=============================================
+
+{[ for category in stylexCategories ]}
+{[ const categoryTokens = filterTokens(category, tokensByType) /]}
+- {{ category }}: {{categoryTokens.length }}
+
+{[/]}
+
+Comparison "origin.name" with path for tokens in categories
+===========================================================
+
+{[ for category in stylexCategories ]}
+
+{{ category }}
+--------------
+
+{[ const categoryTokens = filterTokens(category, tokensByType) /]}
+{[ for token in categoryTokens ]}
+{[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
+
+- name: {{ token.name }}
+  * origin name: {{ token.origin.name }}
+  * token group path: {{ joinArrayBySlash(tokenGroup.path) }}
+
+{[/]}
+
+{[/]}

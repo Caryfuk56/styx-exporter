@@ -1,5 +1,11 @@
-import { brandNames } from "./payloads";
+import { brandNames, stylexCategories } from "./payloads";
 
+/**
+ * Stringifies an object, removing circular references.
+ * 
+ * @param obj - The object to stringify.
+ * @returns The stringified object.
+ */
 const stringifyOutput = (obj) => {
   let cache: unknown[] | null = [];
   
@@ -21,7 +27,7 @@ const stringifyOutput = (obj) => {
 
 /**
  * Return current time in local string
- * @returns 
+ * @returns The current time in local string format.
  */
 export const currentDate = (): string => {
   const date = new Date();
@@ -33,9 +39,10 @@ export const currentDate = (): string => {
 
 /**
  * Return id of the theme according theme name.
- * @param {string} themeName - name of theme
- * @param {Record<string, unknown>} brands 
- * @returns {string} id of the theme
+ * 
+ * @param themeName - The name of the theme.
+ * @param brands - The array of brand objects.
+ * @returns The id of the theme.
  */
 export const getBrandId = (themeName: string, brands: Record<string, unknown>[]): string => {
   const brandObject = brands.filter((brand) => brand.name === themeName);
@@ -48,6 +55,13 @@ export const getBrandId = (themeName: string, brands: Record<string, unknown>[])
   return brandObject[0].id as string;
 };
 
+/**
+ * Generate the exported file name based on the type and brand.
+ * 
+ * @param type - The type of the file.
+ * @param brand - The brand name.
+ * @returns The generated file name.
+ */
 export const exportedFileName = (type: string, brand: string): string => {
   let folder = "";
   let file = "";
@@ -85,12 +99,14 @@ export const exportedFileName = (type: string, brand: string): string => {
   return `${folder}/${file}`;
 };
 
-// const replaceLastOne = (definition: string[], source: string): string => {
-// if (definition.some((item) => source.includes(item))) {
-
-// }
-// };
-
+/**
+ * Generate a variable name based on the prefix, token, and token group.
+ * 
+ * @param prefix - The prefix for the variable name.
+ * @param token - The token object.
+ * @param tokenGroup - The token group object.
+ * @returns The generated variable name.
+ */
 export const variableName = (prefix: string, token: Token, tokenGroup: TokenGroup): string => {
   // Create array with all path segments and token name at the end.
   const segments = [...tokenGroup.path];
@@ -113,6 +129,13 @@ export const variableName = (prefix: string, token: Token, tokenGroup: TokenGrou
   return sentence;
 };
 
+/**
+ * Generate a stylex token name based on the token and token group.
+ * 
+ * @param token - The token object.
+ * @param tokenGroup - The token group object.
+ * @returns The generated stylex token name.
+ */
 export const stylexTokenName = (token: Token, tokenGroup: TokenGroup): string => {
   // Create array with all path segments and token name at the end.
   const segments = [...tokenGroup.path];
@@ -132,10 +155,14 @@ export const stylexTokenName = (token: Token, tokenGroup: TokenGroup): string =>
   return sentence;
 };
 
+/**
+ * Generate a token name based on the origin name of the token.
+ * 
+ * @param token - The token object.
+ * @returns The generated token name.
+ */
 export const tokenNameByOriginName = (token: Token): string => {
   const name = token.origin?.name;
-
-  console.log("name " + name?.split("/"))
 
   const transfromed = name?.split("/");
   transfromed?.shift();
@@ -144,8 +171,6 @@ export const tokenNameByOriginName = (token: Token): string => {
     ?.join(" ")
     .toLocaleLowerCase()
     .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-
-    console.log(joined)
   
   return joined || "";
 };
@@ -153,6 +178,12 @@ export const tokenNameByOriginName = (token: Token): string => {
 let printComment = false;
 let groupName = "";
 
+/**
+ * Generate a group name comment based on the token group.
+ * 
+ * @param tokenGroup - The token group object.
+ * @returns The generated group name comment.
+ */
 export const groupNameComment = (tokenGroup: TokenGroup): string => {
   if (!tokenGroup?.parent) {
     return "";
@@ -174,14 +205,54 @@ export const groupNameComment = (tokenGroup: TokenGroup): string => {
   ` : "";
 };
 
-export const filterTokens = (name: any, tokens: any) => {
-  // console.log(stringifyOutput(tokens));
-  // console.log("ahoj" + data)
-  
-  const filtered = tokens.filter((token) => token.origin.name.includes(name))
-  return filtered;
+/**
+ * Filter tokens based on the name.
+ * 
+ * @param name - The name to filter by.
+ * @param tokens - The array of tokens.
+ * @returns The filtered array of tokens.
+ */
+export const filterTokens = (name: string, tokens: Token[]) => {
+  return tokens.filter((token) => {
+    if (token.origin?.name) {
+      return token.origin.name.includes(name);
+    }
+
+    return "Chyba";
+  });
 };
 
+/**
+ * Print the output data.
+ * 
+ * @param data - The data to print.
+ */
 export const printOutput = (data: any) => {
   console.log(stringifyOutput(data));
 };
+
+/**
+ * Generate a group name for stylex based on the provided strings.
+ * 
+ * @param names - The strings to generate the group name from.
+ * @returns The generated group name.
+ */
+export const stylexGroupName = (...names: string[]): string => {
+  return names
+    .join(" ")
+    .toLocaleLowerCase()
+    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+};
+
+/**
+ * Strin to lower case
+ * @param str - string to lower case
+ * @returns
+ */
+export const toLowerCase = (str: string): string => {
+  return str.toLocaleLowerCase();
+}
+
+export const joinArrayBySlash = (strArr: string[]): string => {
+  return strArr.join(" / ");
+}

@@ -8,9 +8,12 @@ import {
   filterTokens,
   printOutput,
   tokenNameByOriginName,
+  stylexGroupName,
+  toLowerCase,
+  joinArrayBySlash,
 } from "./helpers";
 import hslConvertor from "./hsl-convertor";
-import { behavior, brandNames, currentExporterVersion } from "./payloads";
+import { behavior, brandNames, currentExporterVersion, stylexCategories } from "./payloads";
 
 // Functions registration
 Pulsar.registerFunction("currentDate", currentDate);
@@ -23,8 +26,12 @@ Pulsar.registerFunction("stylexTokenName", stylexTokenName);
 Pulsar.registerFunction("filterTokens", filterTokens);
 Pulsar.registerFunction("printOutput", printOutput);
 Pulsar.registerFunction("tokenNameByOriginName", tokenNameByOriginName);
+Pulsar.registerFunction("stylexGroupName", stylexGroupName);
+Pulsar.registerFunction("toLowerCase", toLowerCase);
+Pulsar.registerFunction("joinArrayBySlash", joinArrayBySlash);
 
 // Payloads
 Pulsar.registerPayload("currentExporterVersion", currentExporterVersion);
 Pulsar.registerPayload("brandNames", brandNames);
 Pulsar.registerPayload("behavior", behavior);
+Pulsar.registerPayload("stylexCategories", stylexCategories);
