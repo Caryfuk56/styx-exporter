@@ -9,20 +9,12 @@
       "write_to": "vigo/colors.css"
     },
     {
-      "invoke": "vigo-colors-stylex.pr",
-      "write_to": "vigo/colors.stylex.ts"
-    },
-    {
       "invoke": "vigo-measures.pr",
       "write_to": "vigo/measures.css"
     },
     {
       "invoke": "vigo-borders.pr",
       "write_to": "vigo/borders.css"
-    },
-    {
-      "invoke": "vigo-measures-stylex.pr",
-      "write_to": "vigo/measures.stylex.ts"
     },
     {
       "invoke": "koop-colors.pr",
@@ -33,14 +25,6 @@
       "write_to": "koop/measures.css"
     },
     {
-      "invoke": "koop-colors-stylex.pr",
-      "write_to": "koop/colors.stylex.ts"
-    },
-    {
-      "invoke": "koop-measures-stylex.pr",
-      "write_to": "koop/measures.stylex.ts"
-    },
-    {
       "invoke": "cpp-colors.pr",
       "write_to": "cpp/colors.css"
     },
@@ -49,12 +33,8 @@
       "write_to": "cpp/measures.css"
     },
     {
-      "invoke": "cpp-colors-stylex.pr",
-      "write_to": "cpp/colors.stylex.ts"
-    },
-    {
-      "invoke": "cpp-measures-stylex.pr",
-      "write_to": "cpp/measures.stylex.ts"
+      "invoke": "vigo-colors-stylex.pr",
+      "write_to": "stylex/colors.stylex.ts"
     }
   ]
 }

@@ -1,6 +1,25 @@
 import { brandNames } from "./payloads";
 
-8/**
+const stringifyOutput = (obj) => {
+  let cache: unknown[] | null = [];
+  
+  const str = JSON.stringify(obj, (key: string, value: string) => {
+    if (typeof value === "object" && value !== null) {
+      if (cache && cache.indexOf(value) !== -1) {
+        return null;
+      }
+
+      cache?.push(value);
+    }
+
+    return value;
+  });
+
+  cache = null;
+  return str;
+};
+
+/**
  * Return current time in local string
  * @returns 
  */
@@ -113,6 +132,24 @@ export const stylexTokenName = (token: Token, tokenGroup: TokenGroup): string =>
   return sentence;
 };
 
+export const tokenNameByOriginName = (token: Token): string => {
+  const name = token.origin?.name;
+
+  console.log("name " + name?.split("/"))
+
+  const transfromed = name?.split("/");
+  transfromed?.shift();
+
+  const joined = transfromed
+    ?.join(" ")
+    .toLocaleLowerCase()
+    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+
+    console.log(joined)
+  
+  return joined || "";
+};
+
 let printComment = false;
 let groupName = "";
 
@@ -135,4 +172,16 @@ export const groupNameComment = (tokenGroup: TokenGroup): string => {
     
   /* --- ${groupName} --- */
   ` : "";
+};
+
+export const filterTokens = (name: any, tokens: any) => {
+  // console.log(stringifyOutput(tokens));
+  // console.log("ahoj" + data)
+  
+  const filtered = tokens.filter((token) => token.origin.name.includes(name))
+  return filtered;
+};
+
+export const printOutput = (data: any) => {
+  console.log(stringifyOutput(data));
 };

@@ -2,4 +2,17 @@
 {[ const brandId = getBrandId(brandNames.vigo, ds.allBrands()) /]}
 {[ inject "file-header-comment" context { "brandName": brandNames.vigo, "id": brandId, "type": "colors" } /]}
 
-{[ inject "stylex-render" context { "id": brandId, "variable": "colors" } /]}
+
+{[ const currentBrand = ds.currentBrand() /]}
+
+{[ const groups = ds.tokenGroupsOfType("Color", currentBrand.id) /]}
+{[ const tokensByType = ds.tokensByType("Color", currentBrand.id) /]}
+
+{[ for group in groups[0].subgroups ]}
+{[ const tokens = filterTokens(group.name, tokensByType) /]}
+export const {{ group.name }} = stylex({
+{[ for token in tokens ]}
+  {[ inject "stylex-name-render" context token /]}: "var(--{[ inject "name-render" context token /]})",
+{[/]}
+});
+{[/]}
