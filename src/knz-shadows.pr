@@ -1,0 +1,5 @@
+{* Generate shadows tokens for KNZ theme. *}
+{[ const brandId = getBrandId(brandNames.knz, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.knz, "id": brandId, "type": "shadows" } /]}
+
+{[ inject "shadows-renderer" context { "id": brandId } /]}

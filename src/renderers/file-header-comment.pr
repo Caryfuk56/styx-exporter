@@ -9,6 +9,7 @@
 {[ case "measures" ]}{[ type = "MEASURES" /]}
 {[ case "borders" ]}{[ type = "BORDERS" /]}
 {[ case "gradients" ]}{[ type = "GRADIENTS" /]}
+{[ case "shadows" ]}{[ type = "SHADOWS" /]}
 {[ default]}{[ type = "<UNKNOWN>" /]}
 {[/]}
 /*

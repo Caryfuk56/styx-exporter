@@ -4,6 +4,6 @@
 {[ for token in measureTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
 {[ inject "render-group-name" context tokenGroup /]}
-  --{[ inject "name-render" context token /]}: {[ inject "render-measure-value" context token.value /]};
+  --{[ inject "token-name-render" context token /]}: {[ inject "render-measure-value" context token.value /]};
 {[/]}
 }

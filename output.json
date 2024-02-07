@@ -9,6 +9,10 @@
       "write_to": "_export-info/measures-info.txt"
     },
     {
+      "invoke": "info-name-comparison.pr",
+      "write_to": "_export-info/info-name-comparison.txt"
+    },
+    {
       "invoke": "vigo-colors.pr",
       "write_to": "vigo/colors.css"
     },
@@ -23,6 +27,10 @@
     {
       "invoke": "vigo-gradients.pr",
       "write_to": "vigo/gradients.css"
+    },
+    {
+      "invoke": "vigo-shadows.pr",
+      "write_to": "vigo/shadows.css"
     },
     {
       "invoke": "koop-colors.pr",
@@ -41,6 +49,10 @@
       "write_to": "koop/gradients.css"
     },
     {
+      "invoke": "koop-shadows.pr",
+      "write_to": "koop/shadows.css"
+    },
+    {
       "invoke": "cpp-colors.pr",
       "write_to": "cpp/colors.css"
     },
@@ -55,6 +67,10 @@
     {
       "invoke": "cpp-gradients.pr",
       "write_to": "cpp/gradients.css"
+    },
+    {
+      "invoke": "cpp-shadows.pr",
+      "write_to": "cpp/shadows.css"
     },
     {
       "invoke": "knz-colors.pr",
@@ -73,6 +89,10 @@
       "write_to": "knz/gradients.css"
     },
     {
+      "invoke": "knz-shadows.pr",
+      "write_to": "knz/shadows.css"
+    },
+    {
       "invoke": "sus-colors.pr",
       "write_to": "sus/colors.css"
     },
@@ -89,6 +109,10 @@
       "write_to": "sus/gradients.css"
     },
     {
+      "invoke": "sus-shadows.pr",
+      "write_to": "sus/shadows.css"
+    },
+    {
       "invoke": "stylex-colors.pr",
       "write_to": "stylex/colors.stylex.ts"
     },
@@ -99,6 +123,10 @@
     {
       "invoke": "stylex-gradients.pr",
       "write_to": "stylex/gradients.stylex.ts"
+    },
+    {
+      "invoke": "stylex-shadows.pr",
+      "write_to": "stylex/shadows.stylex.ts"
     }
   ]
 }

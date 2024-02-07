@@ -1,0 +1,19 @@
+NAMING METHODS COMPARISON
+=========================
+
+The method of creation names of the tokens used by Supernova exporters created doubles group names.
+So this exporter uses deferent method of naming tokens. The method is based on the "origin" property of the token.
+
+Fo debugging purposes, the following table shows the differences between the two methods.
+
+{[ const currentBrand = ds.currentBrand() /]}
+{[ const tokens = ds.tokensByType("Measure", currentBrand.id) /]}
+
+{[ for token in tokens ]}
+
+- old method: {[ inject "name-render" context token /]}
+
+- fixed method: {[ inject "token-name-render" context token /]}
+
+
+{[/]}

@@ -5,7 +5,7 @@
 :root {
 {[ const tokensByType = ds.tokensByType("Gradient", bId) /]}
 {[ for token in tokensByType ]}
-  --{[ inject "name-render" context token /]}:  {[ inject "gradient-renderer" context token /]};
+  --{[ inject "token-name-render" context token /]}:  {[ inject "gradient-renderer" context token /]};
 
 {[/]}
 }

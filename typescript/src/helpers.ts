@@ -68,16 +68,19 @@ export const exportedFileName = (type: string, brand: string): string => {
 
   switch (type) {
     case "colors":
-      file = "_colors.css";
+      file = "colors.css";
       break;
     case "measures":
-      file = "_measures.css";
+      file = "measures.css";
       break;
     case "borders":
-      file = "_borders.css";
+      file = "borders.css";
       break;
     case "gradients":
-      file = "_gradients.css";
+      file = "gradients.css";
+      break;
+    case "shadows":
+      file = "shadows.css";
       break;
     default:
       console.log("File header comment ERROR: file type \"" + type + "\" doesn't exist.");
@@ -184,6 +187,23 @@ export const tokenNameByOriginName = (token: Token): string => {
   return joined || "";
 };
 
+export const tokenNameWithCategory = (token: Token, prefix?: string): string => {
+  const name = token.origin?.id;
+
+  const nameArr = name?.split("/");
+
+  if (prefix) {
+    nameArr?.unshift(prefix);
+  }
+
+  const joined = nameArr
+    ?.join(" ")
+    .toLocaleLowerCase()
+    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+
+  return joined || "";
+}
+
 let printComment = false;
 let groupName = "";
 
@@ -280,4 +300,27 @@ export const gradientAngle = (from: Vector2, to: Vector2): number => {
   const fixedResult = result + 90;
 
   return (fixedResult < 0 ? fixedResult + 360 : fixedResult) % 360;
+};
+
+const getValueWithCorrectUnit = (value: number): string => {
+  if (value === 0) {
+    return `${value}`;
+  }
+
+  return `${value}px`;
+};
+
+const nonNegativeValue = (value: number): number => {
+  return value < 0 ? 0 : value;
+};
+
+export const shadowTokenValue = (token: ShadowToken): string => {
+  const { color, x, y, radius, spread } = token.value;
+
+  const blurRadius = getValueWithCorrectUnit(nonNegativeValue(radius.measure));
+  const offsetX = getValueWithCorrectUnit(x.measure);
+  const offsetY = getValueWithCorrectUnit(y.measure);
+  const spreadRadius = getValueWithCorrectUnit(spread.measure);
+
+  return `${offsetX} ${offsetY} ${blurRadius} ${spreadRadius} #${color.hex}`;
 };

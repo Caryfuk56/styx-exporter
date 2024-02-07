@@ -12,6 +12,8 @@ import {
   toLowerCase,
   joinArrayBySlash,
   gradientAngle,
+  shadowTokenValue,
+  tokenNameWithCategory,
 } from "./helpers";
 import hslConvertor from "./hsl-convertor";
 import { behavior, brandNames, currentExporterVersion, stylexCategories } from "./payloads";
@@ -31,6 +33,8 @@ Pulsar.registerFunction("stylexGroupName", stylexGroupName);
 Pulsar.registerFunction("toLowerCase", toLowerCase);
 Pulsar.registerFunction("joinArrayBySlash", joinArrayBySlash);
 Pulsar.registerFunction("gradientAngle", gradientAngle);
+Pulsar.registerFunction("shadowTokenValue", shadowTokenValue);
+Pulsar.registerFunction("tokenNameWithCategory", tokenNameWithCategory);
 
 // Payloads
 Pulsar.registerPayload("currentExporterVersion", currentExporterVersion);
