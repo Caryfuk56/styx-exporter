@@ -1,6 +1,6 @@
 {[ const brandId = context.id /]}
 {[ const shadowTokens = ds.tokensByType("Shadow", brandId) /]}
-:root {
+@mixin create-shadows {
 {[ for token in shadowTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
   {[ if (!token.isVirtual) ]}

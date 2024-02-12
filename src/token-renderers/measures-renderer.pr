@@ -1,6 +1,6 @@
 {[ const brandId = context /]}
 {[ const measureTokens = ds.tokensByType("Measure", brandId) /]}
-:root {
+@mixin create-measures {
 {[ for token in measureTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
 {[ inject "render-group-name" context tokenGroup /]}

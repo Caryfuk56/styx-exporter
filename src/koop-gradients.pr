@@ -2,7 +2,7 @@
 {[ const bId = getBrandId(brandNames.koop, ds.allBrands()) /]}
 {[ inject "file-header-comment" context { "brandName": brandNames.koop, "id": bId, "type": "gradients" } /]}
 
-:root {
+@mixin create-gradients {
 {[ const tokensByType = ds.tokensByType("Gradient", bId) /]}
 {[ for token in tokensByType ]}
   --{[ inject "token-name-render" context token /]}:  {[ inject "gradient-renderer" context token /]};

@@ -6,7 +6,7 @@
 {[ const brandId = context /]}
 {[ const bordersTokens = ds.tokensByType("Border", brandId) /]}
 
-:root {
+@mixin create-borders {
 {[ for token in bordersTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
 
