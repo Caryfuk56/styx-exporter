@@ -1,12 +1,6 @@
-{[ let prefix = "" /]}
-{[ switch context.tokenType ]}
-{[ case "Color" ]}{[ prefix = behavior.colorTokenPrefix /]}
-{[ case "Typography" ]}{[ prefix = behavior.typographyTokenPrefix /]}
-{[ case "Shadow" ]}{[ prefix = behavior.shadowTokenPrefix /]}
-{[ case "Border" ]}{[ prefix = behavior.borderTokenPrefix /]}
-{[ case "Measure" ]}{[ prefix = behavior.measureTokenPrefix /]}
-{[ case "Gradient" ]}{[ prefix = behavior.gradientTokenPrefix /]}
-{[ default ]}{[ prefix = "" /]}
-{[/]}
+{*
+* Render the name of the current token. This blueprint is based on origin.id. It contains the token name and the category name.
+* @param {Token} context The token to render.
+*}
 {[ const tokenName = tokenNameWithCategory(context) /]}
 {{ tokenName }}

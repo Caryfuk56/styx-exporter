@@ -2,4 +2,5 @@
 {[ const brandId = getBrandId(brandNames.cpp, ds.allBrands()) /]}
 {[ inject "file-header-comment" context { "brandName": brandNames.cpp, "id": brandId, "type": "colors" } /]}
 
+
 {[ inject "colors-renderer" context { "id": brandId } /]}

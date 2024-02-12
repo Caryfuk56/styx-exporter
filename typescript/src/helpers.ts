@@ -1,4 +1,4 @@
-import { brandNames, stylexCategories } from "./payloads";
+import { brandNames } from "./payloads";
 
 /**
  * Stringifies an object, removing circular references.
@@ -64,28 +64,6 @@ export const getBrandId = (themeName: string, brands: Record<string, unknown>[])
  */
 export const exportedFileName = (type: string, brand: string): string => {
   let folder = "";
-  let file = "";
-
-  switch (type) {
-    case "colors":
-      file = "colors.css";
-      break;
-    case "measures":
-      file = "measures.css";
-      break;
-    case "borders":
-      file = "borders.css";
-      break;
-    case "gradients":
-      file = "gradients.css";
-      break;
-    case "shadows":
-      file = "shadows.css";
-      break;
-    default:
-      console.log("File header comment ERROR: file type \"" + type + "\" doesn't exist.");
-      break;
-  }
 
   switch (brand) {
     case brandNames.vigo:
@@ -108,7 +86,7 @@ export const exportedFileName = (type: string, brand: string): string => {
       break;
   }
 
-  return `${folder}/${file}`;
+  return `${folder}/${type}.css`;
 };
 
 /**
@@ -228,10 +206,7 @@ export const groupNameComment = (tokenGroup: TokenGroup): string => {
   }
 
   return printComment
-    ? `
-    
-  /* --- ${groupName} --- */
-  ` : "";
+    ? `/* --- ${groupName} --- */\n` : "";
 };
 
 /**

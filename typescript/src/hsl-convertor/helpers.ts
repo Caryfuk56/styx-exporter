@@ -14,8 +14,8 @@ export const calculateHue = (delta: number, cmax: number, r: number, g: number, 
     return 0;
   }
 
-  if (cmax = r) {
-    result = (g - b) / delta % 6;
+  if (cmax === r) {
+    result = ((g - b) / delta) % 6;
   } else if (cmax === g) {
     result = (b - r) / delta + 2;
   } else if (cmax === b) {

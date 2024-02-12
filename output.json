@@ -14,103 +14,103 @@
     },
     {
       "invoke": "vigo-colors.pr",
-      "write_to": "vigo/colors.css"
+      "write_to": "vigo/_colors.scss"
     },
     {
       "invoke": "vigo-measures.pr",
-      "write_to": "vigo/measures.css"
+      "write_to": "vigo/_measures.scss"
     },
     {
       "invoke": "vigo-borders.pr",
-      "write_to": "vigo/borders.css"
+      "write_to": "vigo/_borders.scss"
     },
     {
       "invoke": "vigo-gradients.pr",
-      "write_to": "vigo/gradients.css"
+      "write_to": "vigo/_gradients.scss"
     },
     {
       "invoke": "vigo-shadows.pr",
-      "write_to": "vigo/shadows.css"
+      "write_to": "vigo/_shadows.scss"
     },
     {
       "invoke": "koop-colors.pr",
-      "write_to": "koop/colors.css"
+      "write_to": "koop/_colors.scss"
     },
     {
       "invoke": "koop-measures.pr",
-      "write_to": "koop/measures.css"
+      "write_to": "koop/_measures.scss"
     },
     {
       "invoke": "koop-borders.pr",
-      "write_to": "koop/borders.css"
+      "write_to": "koop/_borders.scss"
     },
     {
       "invoke": "koop-gradients.pr",
-      "write_to": "koop/gradients.css"
+      "write_to": "koop/_gradients.scss"
     },
     {
       "invoke": "koop-shadows.pr",
-      "write_to": "koop/shadows.css"
+      "write_to": "koop/_shadows.scss"
     },
     {
       "invoke": "cpp-colors.pr",
-      "write_to": "cpp/colors.css"
+      "write_to": "cpp/_colors.scss"
     },
     {
       "invoke": "cpp-measures.pr",
-      "write_to": "cpp/measures.css"
+      "write_to": "cpp/_measures.scss"
     },
     {
       "invoke": "cpp-borders.pr",
-      "write_to": "cpp/borders.css"
+      "write_to": "cpp/_borders.scss"
     },
     {
       "invoke": "cpp-gradients.pr",
-      "write_to": "cpp/gradients.css"
+      "write_to": "cpp/_gradients.scss"
     },
     {
       "invoke": "cpp-shadows.pr",
-      "write_to": "cpp/shadows.css"
+      "write_to": "cpp/_shadows.scss"
     },
     {
       "invoke": "knz-colors.pr",
-      "write_to": "knz/colors.css"
+      "write_to": "knz/_colors.scss"
     },
     {
       "invoke": "knz-measures.pr",
-      "write_to": "knz/measures.css"
+      "write_to": "knz/_measures.scss"
     },
     {
       "invoke": "knz-borders.pr",
-      "write_to": "knz/borders.css"
+      "write_to": "knz/_borders.scss"
     },
     {
       "invoke": "knz-gradients.pr",
-      "write_to": "knz/gradients.css"
+      "write_to": "knz/_gradients.scss"
     },
     {
       "invoke": "knz-shadows.pr",
-      "write_to": "knz/shadows.css"
+      "write_to": "knz/_shadows.scss"
     },
     {
       "invoke": "sus-colors.pr",
-      "write_to": "sus/colors.css"
+      "write_to": "sus/_colors.scss"
     },
     {
       "invoke": "sus-measures.pr",
-      "write_to": "sus/measures.css"
+      "write_to": "sus/_measures.scss"
     },
     {
       "invoke": "sus-borders.pr",
-      "write_to": "sus/borders.css"
+      "write_to": "sus/_borders.scss"
     },
     {
       "invoke": "sus-gradients.pr",
-      "write_to": "sus/gradients.css"
+      "write_to": "sus/_gradients.scss"
     },
     {
       "invoke": "sus-shadows.pr",
-      "write_to": "sus/shadows.css"
+      "write_to": "sus/_shadows.scss"
     },
     {
       "invoke": "stylex-colors.pr",

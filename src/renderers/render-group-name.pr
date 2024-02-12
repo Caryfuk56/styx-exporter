@@ -1,3 +1,9 @@
+{*
+* Render a comment for the group name.
+* @param {TokenGroup} context - the token group of the current group.
+*}
 {[ const comment = groupNameComment(context) /]}
-{[ if (comment) ]}{{ comment }}
+{[ if (comment) ]}
+
+{{ comment }}
 {[/]}
