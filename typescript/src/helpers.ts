@@ -151,11 +151,13 @@ export const stylexTokenName = (token: Token, tokenGroup: TokenGroup): string =>
  * @param token - The token object.
  * @returns The generated token name.
  */
-export const tokenNameByOriginName = (token: Token): string => {
+export const tokenNameByOriginName = (token: Token, keepCategory?: false): string => {
   const name = token.origin?.name;
 
   const transfromed = name?.split("/");
-  transfromed?.shift();
+  if (!keepCategory) {
+    transfromed?.shift();
+  }
 
   const joined = transfromed
     ?.join(" ")

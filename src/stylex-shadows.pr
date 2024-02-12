@@ -13,7 +13,7 @@ import { defineVars } from "@stylexjs/stylex";
 
 export const {{ groupName }} = defineVars({
 {[  for token in tokens]}
-  {[ inject "stylex-name-render" context token /]}: "var(--{[ inject "token-name-render" context token /]})",
+  {[ inject "stylex-name-render" context { "token": token } /]}: "var(--{[ inject "token-name-render" context token /]})",
 {[/]}
 });
 
