@@ -2,4 +2,4 @@
 {[ const brandId = getBrandId(brandNames.sus, ds.allBrands()) /]}
 {[ inject "file-header-comment" context { "brandName": brandNames.sus, "id": brandId, "type": "colors" } /]}
 
-{[ inject "colors-renderer" context { "id": brandId } /]}
+{[ inject "measures-renderer" context brandId /]}
