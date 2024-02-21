@@ -71,5 +71,6 @@ export const stringHSL = (hue: number, saturation: number, lightness: number): s
  * @returns The string representation of the HSLA values.
  */
 export const stringHSLA = (hue: number, saturation: number, lightness: number, alpha: number): string => {
-  return `hsl(${hue}, ${Math.round(saturation)}, ${Math.round(lightness)}%, ${Math.round((alpha * 10) / 10)}%)`;
+  console.log(`hsl(${hue}, ${Math.round(saturation)}, ${Math.round(lightness)}%, ${alpha})`)
+  return `hsla(${hue}, ${Math.round(saturation)}%, ${Math.round(lightness)}%, ${Math.round(alpha * 10) / 10})`;
 };
