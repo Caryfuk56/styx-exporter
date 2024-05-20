@@ -1,0 +1,20 @@
+COLORS TOKENS NAME INFO
+
+List of colors tokens names.
+
+- old method: Origin creation of name based on Supernova name creation.
+- fixed method: Names with fix of doubles category names.
+
+{[ const currentBrand = ds.currentBrand() /]}
+{[ const tokens = ds.tokensByType("Color", currentBrand.id) /]}
+
+{[ for token in tokens ]}
+
+- old method: {[ inject "name-render" context token /]}
+
+- fixed method: {[ inject "token-name-render" context token /]}
+
+- without doubles: {[ inject "token-name-without-doubles" context token /]}
+
+
+{[/]}

@@ -1,6 +1,6 @@
 {
   "name": "supernova-exporter-stylex-css",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Javascript computation for stylex & css all tehemes exporters.",
   "main": "index.js",
   "scripts": {

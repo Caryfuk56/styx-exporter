@@ -2,5 +2,5 @@
 * Render the name of the current token. This blueprint is based on origin.id. It contains the token name and the category name.
 * @param {Token} context The token to render.
 *}
-{[ const tokenName = tokenNameWithCategory(context) /]}
+{[ const tokenName = tokenNameWithCategoryFixDoubles(context) /]}
 {{ tokenName }}

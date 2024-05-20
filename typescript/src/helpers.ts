@@ -75,12 +75,12 @@ export const exportedFileName = (type: string, brand: string): string => {
     case brandNames.koop:
       folder = "koop";
       break;
-    case brandNames.knz:
-      folder = "knz";
-      break;
-    case brandNames.sus:
-      folder = "sus";
-      break;
+    // case brandNames.knz:
+    //   folder = "knz";
+    //   break;
+    // case brandNames.sus:
+    //   folder = "sus";
+    //   break;
     default:
       console.log("File header comment ERROR: brand name \"" + brand + "\" doesn't exist.");
       break;
@@ -152,6 +152,10 @@ export const stylexTokenName = (token: Token, tokenGroup: TokenGroup): string =>
  * @returns The generated token name.
  */
 export const tokenNameByOriginName = (token: Token, keepCategory?: false): string => {
+  if (!token.origin) {
+    console.log("Token origin is undefined", token);
+  }
+  
   const name = token.origin?.name;
 
   const transfromed = name?.split("/");
@@ -183,6 +187,37 @@ export const tokenNameWithCategory = (token: Token, prefix?: string): string => 
 
   return joined || "";
 }
+
+export const tokenNameWithCategoryFixDoubles = (token: Token, prefix?: string): string => {
+  const name = token.origin?.id;
+  
+
+  const nameArr = name?.split("/");
+
+ // Change dash to CamelCase
+  const withoutDash = nameArr?.map((item) => {
+  const result = item.split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+
+  return result.join("");
+});
+
+const removedDoubles = withoutDash?.filter((item, index) => {
+  const lowercasedItem = item.toLowerCase();
+  return index === withoutDash.findIndex((word) => word.toLowerCase() === lowercasedItem);
+});
+
+  if (prefix) {
+    removedDoubles?.unshift(prefix);
+  }
+
+  const joined = removedDoubles
+    ?.join(" ")
+    .toLocaleLowerCase()
+    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+  
+  return joined || "";
+};
 
 let printComment = false;
 let groupName = "";

@@ -9,8 +9,16 @@
       "write_to": "_export-info/measures-info.txt"
     },
     {
-      "invoke": "info-name-comparison.pr",
-      "write_to": "_export-info/info-name-comparison.txt"
+      "invoke": "info-measures-tokens-names.pr",
+      "write_to": "_export-info/info-measures-comparison.txt"
+    },
+    {
+      "invoke": "info-colors-tokens-names.pr",
+      "write_to": "_export-info/info-colors-comparison.txt"
+    },
+    {
+      "invoke": "info-shadows.pr",
+      "write_to": "_export-info/info-shadows.txt"
     },
     {
       "invoke": "vigo-colors.pr",
@@ -21,10 +29,6 @@
       "write_to": "vigo/_measures.scss"
     },
     {
-      "invoke": "vigo-borders.pr",
-      "write_to": "vigo/_borders.scss"
-    },
-    {
       "invoke": "vigo-gradients.pr",
       "write_to": "vigo/_gradients.scss"
     },
@@ -33,24 +37,20 @@
       "write_to": "vigo/_shadows.scss"
     },
     {
-      "invoke": "koop-colors.pr",
-      "write_to": "koop/_colors.scss"
+      "invoke": "cpp-dark-colors.pr",
+      "write_to": "cpp-dark/_colors.scss"
     },
     {
-      "invoke": "koop-measures.pr",
-      "write_to": "koop/_measures.scss"
+      "invoke": "cpp-dark-measures.pr",
+      "write_to": "cpp-dark/_measures.scss"
     },
     {
-      "invoke": "koop-borders.pr",
-      "write_to": "koop/_borders.scss"
+      "invoke": "cpp-dark-gradients.pr",
+      "write_to": "cpp-dark/_gradients.scss"
     },
     {
-      "invoke": "koop-gradients.pr",
-      "write_to": "koop/_gradients.scss"
-    },
-    {
-      "invoke": "koop-shadows.pr",
-      "write_to": "koop/_shadows.scss"
+      "invoke": "cpp-dark-shadows.pr",
+      "write_to": "cpp-dark/_shadows.scss"
     },
     {
       "invoke": "cpp-colors.pr",
@@ -61,10 +61,6 @@
       "write_to": "cpp/_measures.scss"
     },
     {
-      "invoke": "cpp-borders.pr",
-      "write_to": "cpp/_borders.scss"
-    },
-    {
       "invoke": "cpp-gradients.pr",
       "write_to": "cpp/_gradients.scss"
     },
@@ -73,60 +69,36 @@
       "write_to": "cpp/_shadows.scss"
     },
     {
-      "invoke": "knz-colors.pr",
-      "write_to": "knz/_colors.scss"
+      "invoke": "koop-dark-colors.pr",
+      "write_to": "koop-dark/_colors.scss"
     },
     {
-      "invoke": "knz-measures.pr",
-      "write_to": "knz/_measures.scss"
+      "invoke": "koop-dark-measures.pr",
+      "write_to": "koop-dark/_measures.scss"
     },
     {
-      "invoke": "knz-borders.pr",
-      "write_to": "knz/_borders.scss"
+      "invoke": "koop-dark-gradients.pr",
+      "write_to": "koop-dark/_gradients.scss"
     },
     {
-      "invoke": "knz-gradients.pr",
-      "write_to": "knz/_gradients.scss"
+      "invoke": "koop-dark-shadows.pr",
+      "write_to": "koop-dark/_shadows.scss"
     },
     {
-      "invoke": "knz-shadows.pr",
-      "write_to": "knz/_shadows.scss"
+      "invoke": "koop-colors.pr",
+      "write_to": "koop/_colors.scss"
     },
     {
-      "invoke": "sus-colors.pr",
-      "write_to": "sus/_colors.scss"
+      "invoke": "koop-measures.pr",
+      "write_to": "koop/_measures.scss"
     },
     {
-      "invoke": "sus-measures.pr",
-      "write_to": "sus/_measures.scss"
+      "invoke": "koop-gradients.pr",
+      "write_to": "koop/_gradients.scss"
     },
     {
-      "invoke": "sus-borders.pr",
-      "write_to": "sus/_borders.scss"
-    },
-    {
-      "invoke": "sus-gradients.pr",
-      "write_to": "sus/_gradients.scss"
-    },
-    {
-      "invoke": "sus-shadows.pr",
-      "write_to": "sus/_shadows.scss"
-    },
-    {
-      "invoke": "stylex-colors.pr",
-      "write_to": "stylex/colors.stylex.ts"
-    },
-    {
-      "invoke": "stylex-measures.pr",
-      "write_to": "stylex/measures.stylex.ts"
-    },
-    {
-      "invoke": "stylex-gradients.pr",
-      "write_to": "stylex/gradients.stylex.ts"
-    },
-    {
-      "invoke": "stylex-shadows.pr",
-      "write_to": "stylex/shadows.stylex.ts"
+      "invoke": "koop-shadows.pr",
+      "write_to": "koop/_shadows.scss"
     }
   ]
 }

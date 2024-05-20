@@ -1,4 +1,5 @@
 {[ const allBrands = ds.allBrands() /]}
+{[ const designSystem = ds.currentDesignSystem() /]}
 {[ const currentDate = currentDate() /]}
 
 {[ inject "info-header" context ds /]}
@@ -15,3 +16,8 @@
 {{ " - Persistant id: " }}{{ brand.persistentId }}
 {{ " - Id: " }}{{ brand.id }}
 {[/]}
+
+{{ "Current workspace and design system" }}
+{{ "-------------------------------------------" }}
+{{ "Workspace: " }}{{ designSystem.name }}
+{{ "Workspace: " }}{{ designSystem.version }}

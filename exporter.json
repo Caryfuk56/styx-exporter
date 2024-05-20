@@ -6,7 +6,7 @@
   "organization": "Ais servis",
   "homepage": "",
   "source_dir": "src",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "usesBrands": true,
   "config": {
     "sources": "sources.json",
@@ -17,5 +17,6 @@
     "pulsar": "1.0.0",
     "supernova": "1.0.0"
   },
-  "tags": ["CSS", "Tokens", "Stylex"]
+  "tags": ["CSS", "Tokens", "Stylex"],
+  "usesThemes": true
 }

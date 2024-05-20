@@ -1,0 +1,13 @@
+INFORMATION ABOUT SHADOWS GROUPS
+
+{[ const currentBrand = ds.currentBrand() /]}
+{[ const groups = ds.tokenGroupsOfType("Shadow", currentBrand.id) /]}
+{[ const tokensByType = ds.tokensByType("Shadow", currentBrand.id) /]}
+{[ let totalTokens = 0 /]}
+
+{[ for group in groups[0].subgroups ]}
+{[ const tokens = filterTokens(group.name, tokensByType) /]}
+{[ totalTokens = (totalTokens + tokens.length) /]}
+- {{ group.name }}: {{ tokens.length }}
+
+{[/]}
