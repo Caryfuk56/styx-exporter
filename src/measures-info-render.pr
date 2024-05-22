@@ -49,3 +49,19 @@ Comparison "origin.name" with path for tokens in categories
 {[/]}
 
 {[/]}
+
+=============================================
+Tokens origin.name by group name
+=============================================
+{* {[ let gapTokens = ds.tokensByType("gap", currentBrand.id) /]}
+
+{[ for group in gapTokens ]}
+* Group name: {{ group.name}}
+
+{[/]} *}
+
+
+{[ for group in groups ]}
+* Group name: {{ stringifyOutput(group) }}
+
+{[/]}

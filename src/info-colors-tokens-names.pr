@@ -16,5 +16,7 @@ List of colors tokens names.
 
 - without doubles: {[ inject "token-name-without-doubles" context token /]}
 
+- Hopple Final Token Name: {{ nameFromOrigin(token) }}
+
 
 {[/]}

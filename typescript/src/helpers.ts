@@ -6,7 +6,7 @@ import { brandNames } from "./payloads";
  * @param obj - The object to stringify.
  * @returns The stringified object.
  */
-const stringifyOutput = (obj) => {
+export const stringifyOutput = (obj) => {
   let cache: unknown[] | null = [];
   
   const str = JSON.stringify(obj, (key: string, value: string) => {
@@ -165,7 +165,6 @@ export const tokenNameByOriginName = (token: Token, keepCategory?: false): strin
 
   const joined = transfromed
     ?.join(" ")
-    .toLocaleLowerCase()
     .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
   
   return joined || "";
@@ -286,7 +285,7 @@ export const stylexGroupName = (...names: string[]): string => {
 };
 
 /**
- * Strin to lower case
+ * String to lower case
  * @param str - string to lower case
  * @returns
  */
@@ -335,4 +334,34 @@ export const shadowTokenValue = (token: ShadowToken): string => {
   const spreadRadius = getValueWithCorrectUnit(spread.measure);
 
   return `${offsetX} ${offsetY} ${blurRadius} ${spreadRadius} #${color.hex}`;
+};
+
+export const showTokensNamesByOriginPath = (token: Token) => {
+  return {
+    tokenOriginObject: stringifyOutput(token.origin),
+  };
+};
+
+const removedDoubles = (stringArr: string[] | null | undefined): string[] => {
+  if (!stringArr) {
+    return [];
+  }
+
+  return stringArr?.filter((item, index) => {
+    const lowercasedItem = item.toLowerCase();
+    return index === stringArr.findIndex((word) => word.toLowerCase() === lowercasedItem);
+  });
+};
+
+export const nameFromOrigin = (token: Token, usePrefix = true): string => {
+  const removedSpecialChars = token.origin?.name?.replace(/\-|\s/g, "");  
+  const splittedName = removedSpecialChars?.split("/");
+
+  return removedDoubles(splittedName)
+    .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+    .join("");
+
+  // return name?.split("/").map((item) => item.charAt(0).toUpperCase() + item.slice(1)).join("") || "";
+
+  // return token.id
 };

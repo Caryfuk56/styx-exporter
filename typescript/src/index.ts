@@ -15,6 +15,9 @@ import {
   shadowTokenValue,
   tokenNameWithCategory,
   tokenNameWithCategoryFixDoubles,
+  showTokensNamesByOriginPath,
+  stringifyOutput,
+  nameFromOrigin,
 } from "./helpers";
 import hslConvertor from "./hsl-convertor";
 import { behavior, brandNames, currentExporterVersion, stylexCategories } from "./payloads";
@@ -37,6 +40,9 @@ Pulsar.registerFunction("gradientAngle", gradientAngle);
 Pulsar.registerFunction("shadowTokenValue", shadowTokenValue);
 Pulsar.registerFunction("tokenNameWithCategory", tokenNameWithCategory);
 Pulsar.registerFunction("tokenNameWithCategoryFixDoubles", tokenNameWithCategoryFixDoubles)
+Pulsar.registerFunction("showTokensNamesByOriginPath", showTokensNamesByOriginPath)
+Pulsar.registerFunction("stringifyOutput", stringifyOutput)
+Pulsar.registerFunction("nameFromOrigin", nameFromOrigin)
 
 // Payloads
 Pulsar.registerPayload("currentExporterVersion", currentExporterVersion);
