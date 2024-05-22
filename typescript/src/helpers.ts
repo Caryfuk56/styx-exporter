@@ -196,12 +196,12 @@ export const tokenNameWithCategoryFixDoubles = (token: Token, prefix?: string): 
  // Change dash to CamelCase
   const withoutDash = nameArr?.map((item) => {
   const result = item.split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
 
-  return result.join("");
-});
+    return result.join("");
+  });
 
-const removedDoubles = withoutDash?.filter((item, index) => {
+  const removedDoubles = withoutDash?.filter((item, index) => {
   const lowercasedItem = item.toLowerCase();
   return index === withoutDash.findIndex((word) => word.toLowerCase() === lowercasedItem);
 });
@@ -211,11 +211,15 @@ const removedDoubles = withoutDash?.filter((item, index) => {
   }
 
   const joined = removedDoubles
-    ?.join(" ")
-    .toLocaleLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+    ?.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join("");
+
+  if (!joined) {
+    return "";
+  }
+
+  const firstLower = joined.charAt(0).toLowerCase() + joined?.slice(1);
   
-  return joined || "";
+  return firstLower;
 };
 
 let printComment = false;
