@@ -75,6 +75,14 @@ export const exportedFileName = (type: string, brand: string): string => {
     case brandNames.koop:
       folder = "koop";
       break;
+      break;
+    case brandNames.cppDark:
+      folder = "cpp-dark";
+      break;
+      break;
+    case brandNames.koopDark:
+      folder = "koop-dark";
+      break;
     // case brandNames.knz:
     //   folder = "knz";
     //   break;
