@@ -1,4 +1,4 @@
 {[ const tokens = ds.tokensByType(context.type, context.id) /]}
 {[ for token in tokens ]}
-  {[ inject "stylex-name-render" context token /]}: "var({[ inject "token-name-render" context token /]})",
+  {[ inject "token-name-render" context token /]}: "var({[ inject "token-name-render" context token /]})",
 {[/]}

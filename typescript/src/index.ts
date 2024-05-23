@@ -2,18 +2,13 @@ import {
   currentDate,
   getBrandId,
   exportedFileName,
-  variableName,
   groupNameComment,
-  stylexTokenName,
   filterTokens,
   printOutput,
-  tokenNameByOriginName,
   stylexGroupName,
-  toLowerCase,
   joinArrayBySlash,
   gradientAngle,
   shadowTokenValue,
-  tokenNameWithCategory,
   tokenNameWithCategoryFixDoubles,
   showTokensNamesByOriginPath,
   stringifyOutput,
@@ -26,19 +21,14 @@ import { behavior, brandNames, currentExporterVersion, stylexCategories } from "
 Pulsar.registerFunction("currentDate", currentDate);
 Pulsar.registerFunction("getBrandId", getBrandId);
 Pulsar.registerFunction("exportedFileName", exportedFileName);
-Pulsar.registerFunction("variableName", variableName);
 Pulsar.registerFunction("hslConvertor", hslConvertor);
 Pulsar.registerFunction("groupNameComment", groupNameComment);
-Pulsar.registerFunction("stylexTokenName", stylexTokenName);
 Pulsar.registerFunction("filterTokens", filterTokens);
 Pulsar.registerFunction("printOutput", printOutput);
-Pulsar.registerFunction("tokenNameByOriginName", tokenNameByOriginName);
 Pulsar.registerFunction("stylexGroupName", stylexGroupName);
-Pulsar.registerFunction("toLowerCase", toLowerCase);
 Pulsar.registerFunction("joinArrayBySlash", joinArrayBySlash);
 Pulsar.registerFunction("gradientAngle", gradientAngle);
 Pulsar.registerFunction("shadowTokenValue", shadowTokenValue);
-Pulsar.registerFunction("tokenNameWithCategory", tokenNameWithCategory);
 Pulsar.registerFunction("tokenNameWithCategoryFixDoubles", tokenNameWithCategoryFixDoubles)
 Pulsar.registerFunction("showTokensNamesByOriginPath", showTokensNamesByOriginPath)
 Pulsar.registerFunction("stringifyOutput", stringifyOutput)

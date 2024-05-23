@@ -89,104 +89,6 @@ export const exportedFileName = (type: string, brand: string): string => {
   return `${folder}/${type}.css`;
 };
 
-/**
- * Generate a variable name based on the prefix, token, and token group.
- * 
- * @param prefix - The prefix for the variable name.
- * @param token - The token object.
- * @param tokenGroup - The token group object.
- * @returns The generated variable name.
- */
-export const variableName = (prefix: string, token: Token, tokenGroup: TokenGroup): string => {
-  // Create array with all path segments and token name at the end.
-  const segments = [...tokenGroup.path];
-  if (!tokenGroup.isRoot) {
-    segments.push(tokenGroup.name);
-  }
-
-  segments.push(token.name);
-  
-  if (prefix && prefix.length > 0) {
-    segments.unshift(prefix);
-  }
-
-  // create one string with space for camelCase
-  const sentence = segments
-    .join(" ")
-    .toLocaleLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-
-  return sentence;
-};
-
-/**
- * Generate a stylex token name based on the token and token group.
- * 
- * @param token - The token object.
- * @param tokenGroup - The token group object.
- * @returns The generated stylex token name.
- */
-export const stylexTokenName = (token: Token, tokenGroup: TokenGroup): string => {
-  // Create array with all path segments and token name at the end.
-  const segments = [...tokenGroup.path];
-
-  if (!tokenGroup.isRoot) {
-    segments.push(tokenGroup.name);
-  }
-
-  segments.push(token.name);
-
-  // crete one string with space for camelCase
-  const sentence = segments
-    .join(" ")
-    .toLocaleLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-
-  return sentence;
-};
-
-/**
- * Generate a token name based on the origin name of the token.
- * 
- * @param token - The token object.
- * @returns The generated token name.
- */
-export const tokenNameByOriginName = (token: Token, keepCategory?: false): string => {
-  if (!token.origin) {
-    console.log("Token origin is undefined", token);
-  }
-  
-  const name = token.origin?.name;
-
-  const transfromed = name?.split("/");
-  if (!keepCategory) {
-    transfromed?.shift();
-  }
-
-  const joined = transfromed
-    ?.join(" ")
-    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-  
-  return joined || "";
-};
-
-export const tokenNameWithCategory = (token: Token, prefix?: string): string => {
-  const name = token.origin?.id;
-
-  const nameArr = name?.split("/");
-
-  if (prefix) {
-    nameArr?.unshift(prefix);
-  }
-
-  const joined = nameArr
-    ?.join(" ")
-    .toLocaleLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-
-  return joined || "";
-}
-
 export const tokenNameWithCategoryFixDoubles = (token: Token, prefix?: string): string => {
   const name = token.origin?.id;
   
@@ -267,7 +169,7 @@ export const filterTokens = (name: string, tokens: Token[]) => {
 };
 
 /**
- * Print the output data.
+ * Print the output data to the console.
  * 
  * @param data - The data to print.
  */
@@ -287,15 +189,6 @@ export const stylexGroupName = (...names: string[]): string => {
     .toLocaleLowerCase()
     .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
 };
-
-/**
- * String to lower case
- * @param str - string to lower case
- * @returns
- */
-export const toLowerCase = (str: string): string => {
-  return str.toLocaleLowerCase();
-}
 
 export const joinArrayBySlash = (strArr: string[]): string => {
   return strArr.join(" / ");

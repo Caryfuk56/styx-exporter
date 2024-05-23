@@ -12,13 +12,9 @@ List of colors tokens names.
 
 - token origin object: {{ showTokensNamesByOriginPath(token).tokenOriginObject }}
 
-- old method: {[ inject "name-render" context token /]}
-
 - fixed method: {[ inject "token-name-render" context token /]}
 
 - without doubles: {[ inject "token-name-without-doubles" context token /]}
-
-- Token Name by origin name: {{ tokenNameByOriginName(token) }}
 
 - Hopple Final Token Name: {{ nameFromOrigin(token) }}
 

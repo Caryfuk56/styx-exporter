@@ -5,7 +5,7 @@
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
   {[ if (!token.isVirtual) ]}
   {* {[ inject "reference-wrapper" context token.value ]} *}
-  --{[ inject "name-render" context token /]}: {{ shadowTokenValue(token) }};
+  --{[ inject "token-name-render" context token /]}: {{ shadowTokenValue(token) }};
   {* {[/]} *}
 
 {[/]}

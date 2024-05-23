@@ -11,13 +11,9 @@ Fo debugging purposes, the following table shows the differences between the two
 
 {[ for token in tokens ]}
 
-- old method: {[ inject "name-render" context token /]}
-
 - fixed method: {[ inject "token-name-render" context token /]}
 
 - token origin object: {{ showTokensNamesByOriginPath(token).tokenOriginObject }}
-
-- Token Name by origin name: {{ tokenNameByOriginName(token) }}
 
 - Hopple Final Token Name: {{ nameFromOrigin(token) }}
 
