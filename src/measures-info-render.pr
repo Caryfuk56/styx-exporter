@@ -18,7 +18,7 @@ INFORMATION ABOUT MEASURES GROUPS
 
 totalTokens: {{ totalTokens }}
 
-Manually defined categories for new grouping.
+{* Manually defined categories for new grouping.
 =============================================
 
 {[ for category in stylexCategories ]}
@@ -64,4 +64,4 @@ Tokens origin.name by group name
 {[ for group in groups ]}
 * Group name: {{ stringifyOutput(group) }}
 
-{[/]}
+{[/]} *}
