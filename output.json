@@ -7,6 +7,98 @@
     {
       "invoke": "measures-info-render.pr",
       "write_to": "_export-info/measures-info.txt"
+    },
+    {
+      "invoke": "info-measures-tokens-names.pr",
+      "write_to": "_export-info/info-measures-comparison.txt"
+    },
+    {
+      "invoke": "info-colors-tokens-names.pr",
+      "write_to": "_export-info/info-colors-comparison.txt"
+    },
+    {
+      "invoke": "info-shadows.pr",
+      "write_to": "_export-info/info-shadows.txt"
+    },
+    {
+      "invoke": "vigo-colors.pr",
+      "write_to": "vigo/_colors.scss"
+    },
+    {
+      "invoke": "vigo-measures.pr",
+      "write_to": "vigo/_measures.scss"
+    },
+    {
+      "invoke": "vigo-gradients.pr",
+      "write_to": "vigo/_gradients.scss"
+    },
+    {
+      "invoke": "vigo-shadows.pr",
+      "write_to": "vigo/_shadows.scss"
+    },
+    {
+      "invoke": "cpp-dark-colors.pr",
+      "write_to": "cpp-dark/_colors.scss"
+    },
+    {
+      "invoke": "cpp-dark-measures.pr",
+      "write_to": "cpp-dark/_measures.scss"
+    },
+    {
+      "invoke": "cpp-dark-gradients.pr",
+      "write_to": "cpp-dark/_gradients.scss"
+    },
+    {
+      "invoke": "cpp-dark-shadows.pr",
+      "write_to": "cpp-dark/_shadows.scss"
+    },
+    {
+      "invoke": "cpp-colors.pr",
+      "write_to": "cpp/_colors.scss"
+    },
+    {
+      "invoke": "cpp-measures.pr",
+      "write_to": "cpp/_measures.scss"
+    },
+    {
+      "invoke": "cpp-gradients.pr",
+      "write_to": "cpp/_gradients.scss"
+    },
+    {
+      "invoke": "cpp-shadows.pr",
+      "write_to": "cpp/_shadows.scss"
+    },
+    {
+      "invoke": "koop-dark-colors.pr",
+      "write_to": "koop-dark/_colors.scss"
+    },
+    {
+      "invoke": "koop-dark-measures.pr",
+      "write_to": "koop-dark/_measures.scss"
+    },
+    {
+      "invoke": "koop-dark-gradients.pr",
+      "write_to": "koop-dark/_gradients.scss"
+    },
+    {
+      "invoke": "koop-dark-shadows.pr",
+      "write_to": "koop-dark/_shadows.scss"
+    },
+    {
+      "invoke": "koop-colors.pr",
+      "write_to": "koop/_colors.scss"
+    },
+    {
+      "invoke": "koop-measures.pr",
+      "write_to": "koop/_measures.scss"
+    },
+    {
+      "invoke": "koop-gradients.pr",
+      "write_to": "koop/_gradients.scss"
+    },
+    {
+      "invoke": "koop-shadows.pr",
+      "write_to": "koop/_shadows.scss"
     }
   ]
 }
