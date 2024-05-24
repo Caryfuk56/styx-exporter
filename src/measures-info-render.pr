@@ -9,12 +9,12 @@ INFORMATION ABOUT MEASURES GROUPS
 {[ const tokensByType = ds.tokensByType("Measure", currentBrand.id) /]}
 {[ let totalTokens = 0 /]}
 
-{[ for group in groups[0].subgroups ]}
+{* {[ for group in groups[0].subgroups ]}
 {[ const tokens = filterTokens(group.name, tokensByType) /]}
 {[ totalTokens = (totalTokens + tokens.length) /]}
 - {{ group.name }}: {{ tokens.length }}
 
-{[/]}
+{[/]} *}
 
 totalTokens: {{ totalTokens }}
 
@@ -40,15 +40,15 @@ Comparison "origin.name" with path for tokens in categories
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
 {* {[ const tokenByOrigin = tokenNameByOriginName(token) /]} *}
 
-- name: {{ token.name }}
+{* - name: {{ token.name }} *}
   {* * origin name: {{ token.origin.name }} *}
   {* * origin id {{ token.origin.id }} *}
-  * token group path: {{ joinArrayBySlash(tokenGroup.path) }}
+  {* * token group path: {{ joinArrayBySlash(tokenGroup.path) }} *}
   {* * token by origin name: {{ tokenByOrigin }} *}
 
-{[/]}
+{* {[/]} *}
 
-{[/]}
+{* {[/]} *}
 
 =============================================
 Tokens origin.name by group name
@@ -60,7 +60,7 @@ Tokens origin.name by group name
 
 {[/]} *}
 
-
+{* 
 {[ for group in groups ]}
 * Group name: {{ stringifyOutput(group) }}
 
