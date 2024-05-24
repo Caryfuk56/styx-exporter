@@ -18,7 +18,7 @@ INFORMATION ABOUT MEASURES GROUPS
 
 totalTokens: {{ totalTokens }}
 
-{* Manually defined categories for new grouping.
+Manually defined categories for new grouping.
 =============================================
 
 {[ for category in stylexCategories ]}
@@ -30,7 +30,7 @@ totalTokens: {{ totalTokens }}
 Comparison "origin.name" with path for tokens in categories
 ===========================================================
 
-{[ for category in stylexCategories ]}
+{* {[ for category in stylexCategories ]}
 
 {{ category }}
 --------------
