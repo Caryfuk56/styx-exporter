@@ -9,12 +9,12 @@ INFORMATION ABOUT MEASURES GROUPS
 {[ const tokensByType = ds.tokensByType("Measure", currentBrand.id) /]}
 {[ let totalTokens = 0 /]}
 
-{* {[ for group in groups[0].subgroups ]}
+{[ for group in groups[0].subgroups ]}
 {[ const tokens = filterTokens(group.name, tokensByType) /]}
 {[ totalTokens = (totalTokens + tokens.length) /]}
 - {{ group.name }}: {{ tokens.length }}
 
-{[/]} *}
+{[/]}
 
 totalTokens: {{ totalTokens }}
 
