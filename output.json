@@ -3,6 +3,10 @@
     {
       "invoke": "export-info.pr",
       "write_to": "_export-info/export-info.txt"
+    },
+    {
+      "invoke": "measures-info-render.pr",
+      "write_to": "_export-info/measures-info.txt"
     }
   ]
 }
