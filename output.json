@@ -3,22 +3,6 @@
     {
       "invoke": "export-info.pr",
       "write_to": "_export-info/export-info.txt"
-    },
-    {
-      "invoke": "measures-info-render.pr",
-      "write_to": "_export-info/measures-info.txt"
-    },
-    {
-      "invoke": "info-measures-tokens-names.pr",
-      "write_to": "_export-info/info-measures-comparison.txt"
-    },
-    {
-      "invoke": "info-colors-tokens-names.pr",
-      "write_to": "_export-info/info-colors-comparison.txt"
-    },
-    {
-      "invoke": "info-shadows.pr",
-      "write_to": "_export-info/info-shadows.txt"
     }
   ]
 }
