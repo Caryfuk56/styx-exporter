@@ -30,7 +30,7 @@ Manually defined categories for new grouping.
 Comparison "origin.name" with path for tokens in categories
 ===========================================================
 
-{* {[ for category in stylexCategories ]}
+{[ for category in stylexCategories ]}
 
 {{ category }}
 --------------
@@ -38,23 +38,24 @@ Comparison "origin.name" with path for tokens in categories
 {[ const categoryTokens = filterTokens(category, tokensByType) /]}
 {[ for token in categoryTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
-{* {[ const tokenByOrigin = tokenNameByOriginName(token) /]} *}
+{[ const tokenByOrigin = tokenNameByOriginName(token) /]}
 
-{* - name: {{ token.name }} *}
-  {* * origin name: {{ token.origin.name }} *}
-  {* * origin id {{ token.origin.id }} *}
-  {* * token group path: {{ joinArrayBySlash(tokenGroup.path) }} *}
-  {* * token by origin name: {{ tokenByOrigin }} *}
+- name: {{ token.name }}
+  * origin name: {{ token.origin.name }}
+  * origin id {{ token.origin.id }}
+  * token group path: {{ joinArrayBySlash(tokenGroup.path) }}
+  * token by origin name: {{ tokenByOrigin }}
 
-{* {[/]} *}
+{[/]}
 
-{* {[/]} *}
+{[/]}
 
 =============================================
 Tokens origin.name by group name
 =============================================
 {* {[ let gapTokens = ds.tokensByType("gap", currentBrand.id) /]}
 
+{[ for group in gapTokens ]}
 {[ for group in gapTokens ]}
 * Group name: {{ group.name}}
 
