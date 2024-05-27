@@ -2,15 +2,8 @@
 {[ let gradientType = "linear-gradient" /]}
 {[ let gradientDirection = gradientAngle(context.value.from, context.value.to).rounded(2).toString().suffixed("deg") /]}
 {[ if (context.type === "Radial") ]}
-  {[ "gradientType" = "radial-gradient" /]}
-  {[ "gradientDirection" = "circle at center" /]}
+{[ "gradientType" = "radial-gradient" /]}
+{[ "gradientDirection" = "circle at center" /]}
 {[/]}
-{{ gradientType }}(
-  {{ gradientDirection }},
-  {[ for stop in context.value.stops ]}
-    #{{ stop.color.hex }} {{ (stop.position * 100).rounded(1) }}%{[ if !(#last)]}, {[/]}
-
-  {[/]}
-)
-
+{{ gradientType }}({{ gradientDirection }},{[ for stop in context.value.stops ]} {{hslConvertor(stop.color)}} {{ (stop.position * 100).rounded(1) }}%{[ if !(#last)]},{[/]}{[/]});
 {[/]}

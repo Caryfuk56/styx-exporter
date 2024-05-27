@@ -1,7 +1,6 @@
 @mixin create-colors {
 {[ for token in ds.tokensByType("Color", context.id) ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
-
 {[ inject "render-group-name" context tokenGroup /]}
   --{[ inject "token-name-render" context { "token": token, "prefix": "Color" } /]}: {[ inject "hsl-colors" context token /]};
 

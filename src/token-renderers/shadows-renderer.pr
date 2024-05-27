@@ -4,9 +4,8 @@
 {[ for token in shadowTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
   {[ if (!token.isVirtual) ]}
-  {* {[ inject "reference-wrapper" context token.value ]} *}
+  {[ inject "render-group-name" context tokenGroup /]}
   --{[ inject "token-name-render" context { "token": token, "prefix": "Shadow" } /]}: {{ shadowTokenValue(token) }};
-  {* {[/]} *}
 
 {[/]}
 {[/]}

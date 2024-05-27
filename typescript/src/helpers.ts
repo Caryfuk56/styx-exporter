@@ -1,3 +1,4 @@
+import hslConvertor from "./hsl-convertor";
 import { brandNames } from "./payloads";
 
 /**
@@ -97,44 +98,6 @@ export const exportedFileName = (type: string, brand: string): string => {
   return `${folder}/${type}.css`;
 };
 
-export const tokenNameWithCategoryFixDoubles = (token: Token, prefix?: string): string => {
-  if (!token.origin?.name) {
-    return "";
-  }
-  
-  const name = token.origin?.name?.replace(/\-|\s/g, "");
-
-  const nameArr = name?.split("/");
-
- // Change dash to CamelCase
-  const withoutDash = nameArr?.map((item) => {
-  const result = item.split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
-
-    return result.join("");
-  });
-
-  const removedDoubles = withoutDash?.filter((item, index) => {
-  const lowercasedItem = item.toLowerCase();
-  return index === withoutDash.findIndex((word) => word.toLowerCase() === lowercasedItem);
-});
-
-  if (prefix) {
-    removedDoubles?.unshift(prefix);
-  }
-
-  const joined = removedDoubles
-    ?.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join("");
-
-  if (!joined) {
-    return "";
-  }
-
-  const firstLower = joined.charAt(0).toLowerCase() + joined?.slice(1);
-  
-  return firstLower;
-};
-
 let printComment = false;
 let groupName = "";
 
@@ -145,11 +108,11 @@ let groupName = "";
  * @returns The generated group name comment.
  */
 export const groupNameComment = (tokenGroup: TokenGroup): string => {
-  if (!tokenGroup?.parent) {
+  if (!tokenGroup) {
     return "";
   }
 
-  const { parent: { name } } = tokenGroup;
+  const { name } = tokenGroup;
 
   if (name !== groupName) {
     groupName = name;
@@ -249,6 +212,31 @@ const nonNegativeValue = (value: number): number => {
   return value < 0 ? 0 : value;
 };
 
+const numberIsUndefined = (value: number | undefined): boolean => {
+  return value === undefined || isNaN(value) || value === null;
+}
+
+const convertToColorTokenValue = (
+  hex: string | undefined,
+  r: number | undefined,
+  g: number | undefined,
+  b: number | undefined,
+  a: number | undefined
+): ColorTokenValue => {
+  if (!hex || numberIsUndefined(r) || numberIsUndefined(g) || numberIsUndefined(b) || numberIsUndefined(a)) {
+    console.log("ERROR: Missing color values." +  ` ${hex} ${r} ${g} ${b} ${a}`);
+    return {
+      hex: "",
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 0,
+      referencedToken: null,
+    };
+  }
+  return { hex, r: r!, g: g!, b: b!, a: a!, referencedToken: null };
+};
+
 /**
  * Calculate css value of for shadow tokens.
  * @param {Token} token - Token object 
@@ -262,7 +250,10 @@ export const shadowTokenValue = (token: ShadowToken): string => {
   const offsetY = getValueWithCorrectUnit(y.measure);
   const spreadRadius = getValueWithCorrectUnit(spread.measure);
 
-  return `${offsetX} ${offsetY} ${blurRadius} ${spreadRadius} #${color.hex}`;
+  const convertedColor = convertToColorTokenValue(color.hex, color.r, color.g, color.b, color.a);
+
+  // return `${offsetX} ${offsetY} ${blurRadius} ${spreadRadius} #${color.hex}`;
+  return `${offsetX} ${offsetY} ${blurRadius} ${spreadRadius} ${hslConvertor(convertToColorTokenValue(color.hex, color.r, color.g, color.b, color.a))}`;
 };
 
 const removedDoubles = (stringArr: string[] | null | undefined): string[] => {
@@ -287,14 +278,21 @@ export const nameFromOrigin = (token: Token, prefix?: string): string => {
     
     return "";
   }
-  const removedSpecialChars = token.origin?.name?.replace(/\-|\s/g, "/"); 
-  const splittedName = removedSpecialChars?.split("/");
+
+  const rm = token.origin?.name?.split("/").map((item) => {
+    return item
+      .split(/\-|\s/g)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join("");
+  })
 
   if (prefix) {
-    splittedName?.unshift(prefix);
+    rm?.unshift(prefix);
   }
 
-  return removedDoubles(splittedName)
+  const rd = removedDoubles(rm)
     .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
     .join("");
+
+  return rd.charAt(0).toLowerCase() + rd.slice(1);
 };
