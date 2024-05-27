@@ -98,8 +98,7 @@ export const exportedFileName = (type: string, brand: string): string => {
 };
 
 export const tokenNameWithCategoryFixDoubles = (token: Token, prefix?: string): string => {
-  const name = token.origin?.id;
-  
+  const name = token.origin?.name?.replace(/\-|\s/g, "");
 
   const nameArr = name?.split("/");
 
@@ -258,9 +257,13 @@ const removedDoubles = (stringArr: string[] | null | undefined): string[] => {
   });
 };
 
-export const nameFromOrigin = (token: Token, usePrefix = true): string => {
+export const nameFromOrigin = (token: Token, prefix?: string): string => {
   const removedSpecialChars = token.origin?.name?.replace(/\-|\s/g, "");  
   const splittedName = removedSpecialChars?.split("/");
+
+  if (prefix) {
+    splittedName?.unshift(prefix);
+  }
 
   return removedDoubles(splittedName)
     .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
