@@ -1,2 +1,0 @@
-{[ const tokenName = tokenNameByOriginName(context.token, context.keepCategory) /]}
-{{ tokenName }}

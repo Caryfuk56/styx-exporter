@@ -8,6 +8,8 @@ export const brandNames = {
   koopDark: "Koop Dark",
   koop: "Koop Light",
   vigo: "VIGo",
+  knz: "KNZ Light",
+  sus: "SUS Light",
 };
 
 export const behavior = {

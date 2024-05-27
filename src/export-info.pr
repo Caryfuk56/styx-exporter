@@ -2,7 +2,11 @@
 {[ const designSystem = ds.currentDesignSystem() /]}
 {[ const currentDate = currentDate() /]}
 
-{[ inject "info-header" context ds /]}
+{{ "================================================" }}
+{{ "|     AIS - STYLEX & CSS ALL BRANDS RENDER     |" }}
+{{ "| -------------------------------------------- |" }}
+{{ "version: " }}{{ currentExporterVersion }}{{ "                            |" }}
+{{ "================================================" }}
 
 
 {{ "Vyexportováno: " }}{{ currentDate }}

@@ -5,7 +5,7 @@
 @mixin create-gradients {
 {[ const tokensByType = ds.tokensByType("Gradient", bId) /]}
 {[ for token in tokensByType ]}
-  --{[ inject "token-name-render" context { "token": token, "prefix": "Gradient" } /]}:  {[ inject "gradient-renderer" context { "token": token } /]};
+  --{[ inject "token-name-render" context { "token": token, "prefix": "Gradient" } /]}:  {[ inject "gradient-renderer" context token /]};
 
 {[/]}
 }

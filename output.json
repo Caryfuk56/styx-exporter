@@ -99,6 +99,38 @@
     {
       "invoke": "koop-shadows.pr",
       "write_to": "koop/_shadows.scss"
+    },
+    {
+      "invoke": "knz-colors.pr",
+      "write_to": "knz/_colors.scss"
+    },
+    {
+      "invoke": "knz-measures.pr",
+      "write_to": "knz/_measures.scss"
+    },
+    {
+      "invoke": "knz-gradients.pr",
+      "write_to": "knz/_gradients.scss"
+    },
+    {
+      "invoke": "knz-shadows.pr",
+      "write_to": "knz/_shadows.scss"
+    },
+    {
+      "invoke": "sus-colors.pr",
+      "write_to": "sus/_colors.scss"
+    },
+    {
+      "invoke": "sus-measures.pr",
+      "write_to": "sus/_measures.scss"
+    },
+    {
+      "invoke": "sus-gradients.pr",
+      "write_to": "sus/_gradients.scss"
+    },
+    {
+      "invoke": "sus-shadows.pr",
+      "write_to": "sus/_shadows.scss"
     }
   ]
 }

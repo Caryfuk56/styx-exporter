@@ -1,8 +1,0 @@
-{* 
-  Render colors css file.
- *}
-  {[ for token in ds.tokensByType("Color", id) ]}
-    {[ inject "test" context token /]}
-
-    
-  {[/]}

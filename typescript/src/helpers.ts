@@ -83,6 +83,12 @@ export const exportedFileName = (type: string, brand: string): string => {
     case brandNames.koopDark:
       folder = "koop-dark";
       break;
+    case brandNames.knz:
+      folder = "knz";
+      break;
+    case brandNames.sus:
+      folder = "sus";
+      break;
     default:
       console.log("File header comment ERROR: brand name \"" + brand + "\" doesn't exist.");
       break;
@@ -195,6 +201,11 @@ export const stylexGroupName = (...names: string[]): string => {
     .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
 };
 
+/**
+ * Join array of strings with slash.
+ * @param {string[]} strArr - array of strings
+ * @returns {string} - joined string with slash
+ */
 export const joinArrayBySlash = (strArr: string[]): string => {
   return strArr.join(" / ");
 }
@@ -204,7 +215,18 @@ type Vector2 = {
   y: number;
 }
 
+/**
+ * Calculate angle of gradient in degrees {0, 360}
+ * @param {Vector2} from - Gradient start point 
+ * @param {Vector2} to - Gradient end point 
+ * @returns {number} - Angle of gradient in degrees {0, 360}
+ */
 export const gradientAngle = (from: Vector2, to: Vector2): number => {
+  if (!from || !to) {
+    console.log("ERROR: Missing gradient points.");
+    return 0;
+  }
+  
   const deltaX = to.x - from.x;
   const deltaY = to.y - from.y;
 
@@ -227,6 +249,11 @@ const nonNegativeValue = (value: number): number => {
   return value < 0 ? 0 : value;
 };
 
+/**
+ * Calculate css value of for shadow tokens.
+ * @param {Token} token - Token object 
+ * @returns {string} - Token value in format {offsetX} {offsetY} {blurRadius} {spreadRadius} #{color.hex}
+ */
 export const shadowTokenValue = (token: ShadowToken): string => {
   const { color, x, y, radius, spread } = token.value;
 
@@ -236,12 +263,6 @@ export const shadowTokenValue = (token: ShadowToken): string => {
   const spreadRadius = getValueWithCorrectUnit(spread.measure);
 
   return `${offsetX} ${offsetY} ${blurRadius} ${spreadRadius} #${color.hex}`;
-};
-
-export const showTokensNamesByOriginPath = (token: Token) => {
-  return {
-    tokenOriginObject: stringifyOutput(token.origin),
-  };
 };
 
 const removedDoubles = (stringArr: string[] | null | undefined): string[] => {
@@ -255,12 +276,18 @@ const removedDoubles = (stringArr: string[] | null | undefined): string[] => {
   });
 };
 
+/**
+ * Create name of the token from origin name.
+ * @param {Token} token - Token object. 
+ * @param {string} prefix - Prefix for the name placed before the origin name. 
+ * @returns {string} - Name of the token in format {prefix}{originName}
+ */
 export const nameFromOrigin = (token: Token, prefix?: string): string => {
   if (!token.origin?.name) {
     
     return "";
   }
-  const removedSpecialChars = token.origin?.name?.replace(/\-|\s/g, "");  
+  const removedSpecialChars = token.origin?.name?.replace(/\-|\s/g, "/"); 
   const splittedName = removedSpecialChars?.split("/");
 
   if (prefix) {
@@ -270,8 +297,4 @@ export const nameFromOrigin = (token: Token, prefix?: string): string => {
   return removedDoubles(splittedName)
     .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
     .join("");
-
-  // return name?.split("/").map((item) => item.charAt(0).toUpperCase() + item.slice(1)).join("") || "";
-
-  // return token.id
 };

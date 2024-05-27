@@ -10,7 +10,7 @@ List of colors tokens names.
 
 {[ for token in tokens ]}
 
-- token origin object: {{ showTokensNamesByOriginPath(token).tokenOriginObject }}
+- Origin: {{ stringifyOutput(token?.origin) }}
 
 - fixed method: {[ inject "token-name-render" context { "token": token } /]}
 

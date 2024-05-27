@@ -38,7 +38,6 @@ Comparison "origin.name" with path for tokens in categories
 {[ const categoryTokens = filterTokens(category, tokensByType) /]}
 {[ for token in categoryTokens ]}
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
-{[ const tokenByOrigin = tokenNameByOriginName(token) /]}
 
 - name: {{ token.name }}
   * origin name: {{ token.origin.name }}

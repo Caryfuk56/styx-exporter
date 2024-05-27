@@ -10,7 +10,6 @@ import {
   gradientAngle,
   shadowTokenValue,
   tokenNameWithCategoryFixDoubles,
-  showTokensNamesByOriginPath,
   stringifyOutput,
   nameFromOrigin,
 } from "./helpers";
@@ -30,7 +29,6 @@ Pulsar.registerFunction("joinArrayBySlash", joinArrayBySlash);
 Pulsar.registerFunction("gradientAngle", gradientAngle);
 Pulsar.registerFunction("shadowTokenValue", shadowTokenValue);
 Pulsar.registerFunction("tokenNameWithCategoryFixDoubles", tokenNameWithCategoryFixDoubles)
-Pulsar.registerFunction("showTokensNamesByOriginPath", showTokensNamesByOriginPath)
 Pulsar.registerFunction("stringifyOutput", stringifyOutput)
 Pulsar.registerFunction("nameFromOrigin", nameFromOrigin)
 

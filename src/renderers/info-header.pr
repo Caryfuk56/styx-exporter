@@ -1,6 +1,0 @@
-{* Render header of the all brands export info *}
-{{ "================================================" }}
-{{ "|     AIS - STYLEX & CSS ALL BRANDS RENDER     |" }}
-{{ "| -------------------------------------------- |" }}
-{{ "version: " }}{{ currentExporterVersion }}{{ "                            |" }}
-{{ "================================================" }}

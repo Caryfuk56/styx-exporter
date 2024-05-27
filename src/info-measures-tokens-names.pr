@@ -11,9 +11,9 @@ Fo debugging purposes, the following table shows the differences between the two
 
 {[ for token in tokens ]}
 
-- fixed method: {[ inject "token-name-render" context { "token": token } /]}
+- Origin: {{ stringifyOutput(token?.origin) }}
 
-- token origin object: {{ showTokensNamesByOriginPath(token).tokenOriginObject }}
+- fixed method: {[ inject "token-name-render" context { "token": token } /]}
 
 - Hopple Final Token Name: {{ nameFromOrigin(token) }}
 
