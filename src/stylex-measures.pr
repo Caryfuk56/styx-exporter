@@ -11,7 +11,7 @@ import { defineVars } from "@stylexjs/stylex";
 
 export const {{ stylexGroupName(behavior.measureTokenPrefix, category) }} = defineVars({
   {[ for token in categoryTokens ]}
-  {[ inject "token-name-render" context {"token": token, "keepCategory": true} /]}: "var(--{[ inject "token-name-render" context token /]})",
+  {[ inject "token-name-render" context {"token": token, "prefix": "Measure" } /]}: "var(--{[ inject "token-name-render" context { "token": token } /]})",
   {[/]}
 });
 {[/]}

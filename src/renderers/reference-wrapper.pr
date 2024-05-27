@@ -1,4 +1,4 @@
 {[ if !context.referencedToken ]}
 {{ #body }}
 {[ else ]}
-var(--{[ inject "token-name-render" context context.referencedToken /]}){[/]}
+var(--{[ inject "token-name-render" context { "token": context.referencedToken } /]}){[/]}

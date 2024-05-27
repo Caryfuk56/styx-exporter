@@ -11,6 +11,6 @@
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
 
 {[ inject "render-group-name" context tokenGroup /]}
-  --{[ inject "token-name-render" context token /]}: {[ inject "border-value-render" context token /]};
+  --{[ inject "token-name-render" context { "token": token, "prefix": "Border" } /]}: {[ inject "border-value-render" context { "token": token } /]};
 {[/]}
 }

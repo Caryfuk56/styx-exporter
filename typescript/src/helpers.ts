@@ -83,12 +83,6 @@ export const exportedFileName = (type: string, brand: string): string => {
     case brandNames.koopDark:
       folder = "koop-dark";
       break;
-    // case brandNames.knz:
-    //   folder = "knz";
-    //   break;
-    // case brandNames.sus:
-    //   folder = "sus";
-    //   break;
     default:
       console.log("File header comment ERROR: brand name \"" + brand + "\" doesn't exist.");
       break;
@@ -98,6 +92,10 @@ export const exportedFileName = (type: string, brand: string): string => {
 };
 
 export const tokenNameWithCategoryFixDoubles = (token: Token, prefix?: string): string => {
+  if (!token.origin?.name) {
+    return "";
+  }
+  
   const name = token.origin?.name?.replace(/\-|\s/g, "");
 
   const nameArr = name?.split("/");
@@ -258,6 +256,10 @@ const removedDoubles = (stringArr: string[] | null | undefined): string[] => {
 };
 
 export const nameFromOrigin = (token: Token, prefix?: string): string => {
+  if (!token.origin?.name) {
+    
+    return "";
+  }
   const removedSpecialChars = token.origin?.name?.replace(/\-|\s/g, "");  
   const splittedName = removedSpecialChars?.split("/");
 

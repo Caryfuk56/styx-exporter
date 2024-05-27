@@ -3,7 +3,7 @@
 {[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
 
 {[ inject "render-group-name" context tokenGroup /]}
-  --{[ inject "token-name-render" context token /]}: {[ inject "hsl-colors" context token /]};
+  --{[ inject "token-name-render" context { "token": token, "prefix": "Color" } /]}: {[ inject "hsl-colors" context token /]};
 
 {[/]}
 }
