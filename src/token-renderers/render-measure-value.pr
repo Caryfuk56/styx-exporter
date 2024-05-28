@@ -1,4 +1,4 @@
-{[ inject "reference-wrapper" context context ]}
+{[ inject "reference-wrapper" context { "ctx": context, "prefix": "measures" } ]}
 {[ let unit = "px" /]}
 {[ switch context.unit ]}
 {[ case "Points" ]}{[ set unit = "pt" /]}

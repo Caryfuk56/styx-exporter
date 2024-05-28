@@ -1,4 +1,4 @@
-{[ inject "reference-wrapper" context context ]}
+{[ inject "reference-wrapper" context {"ctx": context, "prefix": "color"} ]}
 {[ const color = hslConvertor(context.value) /]}
 {{ color }}
 {[/]}

@@ -1,4 +1,4 @@
-{[ inject "reference-wrapper" context context ]}
+{[ inject "reference-wrapper" context { "ctx": context, "prefix": "gradient"} ]}
 {[ let gradientType = "linear-gradient" /]}
 {[ let gradientDirection = gradientAngle(context.value.from, context.value.to).rounded(2).toString().suffixed("deg") /]}
 {[ if (context.type === "Radial") ]}
