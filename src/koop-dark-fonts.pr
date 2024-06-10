@@ -1,0 +1,5 @@
+{* Generate all FONTS tokens for the Koop dark theme *}
+{[ const brandId = getBrandId(brandNames.koopDark, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.koopDark, "id": brandId, "type": "fonts" } /]}
+
+{[ inject "fonts-renderer" context { "id": brandId } /]}

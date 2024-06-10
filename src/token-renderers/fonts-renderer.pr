@@ -1,0 +1,7 @@
+@mixin create-fonts {
+{[ for token in ds.tokensByType("GenericToken", context.id) ]}
+{[ const tokenGroup = ds.tokenGroupContainingTokenId(token.id) /]}
+{[ inject "render-group-name" context tokenGroup /]}
+  --{[ inject "token-name-render" context { "token": token, "prefix": "Fonts" } /]}: {{ quotationMarks(token.value.text) }};
+{[/]}
+}

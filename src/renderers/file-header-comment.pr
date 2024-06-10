@@ -10,6 +10,7 @@
 {[ case "borders" ]}{[ type = "BORDERS" /]}
 {[ case "gradients" ]}{[ type = "GRADIENTS" /]}
 {[ case "shadows" ]}{[ type = "SHADOWS" /]}
+{[ case "fonts" ]}{[ type = "FONT_FAMILY" /]}
 {[ default]}{[ type = "<UNKNOWN>" /]}
 {[/]}
 /*

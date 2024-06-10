@@ -21,6 +21,10 @@
       "write_to": "_export-info/info-shadows.txt"
     },
     {
+      "invoke": "info-fonts.pr",
+      "write_to": "_export-info/info-fonts.txt"
+    },
+    {
       "invoke": "vigo-colors.pr",
       "write_to": "vigo/_colors.scss"
     },
@@ -35,6 +39,10 @@
     {
       "invoke": "vigo-shadows.pr",
       "write_to": "vigo/_shadows.scss"
+    },
+    {
+      "invoke": "vigo-fonts.pr",
+      "write_to": "vigo/_fonts.scss"
     },
     {
       "invoke": "cpp-dark-colors.pr",
@@ -53,6 +61,10 @@
       "write_to": "cpp-dark/_shadows.scss"
     },
     {
+      "invoke": "cpp-dark-fonts.pr",
+      "write_to": "cpp-dark/_fonts.scss"
+    },
+    {
       "invoke": "cpp-colors.pr",
       "write_to": "cpp/_colors.scss"
     },
@@ -67,6 +79,10 @@
     {
       "invoke": "cpp-shadows.pr",
       "write_to": "cpp/_shadows.scss"
+    },
+    {
+      "invoke": "cpp-fonts.pr",
+      "write_to": "cpp/_fonts.scss"
     },
     {
       "invoke": "koop-dark-colors.pr",
@@ -85,6 +101,10 @@
       "write_to": "koop-dark/_shadows.scss"
     },
     {
+      "invoke": "koop-dark-fonts.pr",
+      "write_to": "koop-dark/_fonts.scss"
+    },
+    {
       "invoke": "koop-colors.pr",
       "write_to": "koop/_colors.scss"
     },
@@ -101,6 +121,10 @@
       "write_to": "koop/_shadows.scss"
     },
     {
+      "invoke": "koop-fonts.pr",
+      "write_to": "koop/_fonts.scss"
+    },
+    {
       "invoke": "knz-colors.pr",
       "write_to": "knz/_colors.scss"
     },
@@ -111,6 +135,10 @@
     {
       "invoke": "knz-gradients.pr",
       "write_to": "knz/_gradients.scss"
+    },
+    {
+      "invoke": "knz-fonts.pr",
+      "write_to": "knz/_fonts.scss"
     },
     {
       "invoke": "knz-shadows.pr",
@@ -131,6 +159,10 @@
     {
       "invoke": "sus-shadows.pr",
       "write_to": "sus/_shadows.scss"
+    },
+    {
+      "invoke": "sus-fonts.pr",
+      "write_to": "sus/_fonts.scss"
     }
   ]
 }

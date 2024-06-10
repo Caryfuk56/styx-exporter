@@ -1,0 +1,14 @@
+FONTS EXPORT INFO
+{[ const currentBrand = ds.currentBrand() /]}
+{[ const tokens = ds.tokensByType("GenericToken", currentBrand.id) /]}
+{[ const tkens2 = ds.allTokens(currentBrand.id) /]}
+
+- Number of tkens: {{ tokens.length }}
+
+{[ for token in tokens ]}
+- Origin {{ stringifyOutput(token?.origin) }}
+
+- Name from Origin: {{ nameFromOrigin(token) }}
+
+
+{[/]}

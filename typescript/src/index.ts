@@ -11,6 +11,7 @@ import {
   shadowTokenValue,
   stringifyOutput,
   nameFromOrigin,
+  quotationMarks,
 } from "./helpers";
 import hslConvertor from "./hsl-convertor";
 import { behavior, brandNames, currentExporterVersion, stylexCategories } from "./payloads";
@@ -27,8 +28,9 @@ Pulsar.registerFunction("stylexGroupName", stylexGroupName);
 Pulsar.registerFunction("joinArrayBySlash", joinArrayBySlash);
 Pulsar.registerFunction("gradientAngle", gradientAngle);
 Pulsar.registerFunction("shadowTokenValue", shadowTokenValue);
-Pulsar.registerFunction("stringifyOutput", stringifyOutput)
-Pulsar.registerFunction("nameFromOrigin", nameFromOrigin)
+Pulsar.registerFunction("stringifyOutput", stringifyOutput);
+Pulsar.registerFunction("nameFromOrigin", nameFromOrigin);
+Pulsar.registerFunction("quotationMarks", quotationMarks);
 
 // Payloads
 Pulsar.registerPayload("currentExporterVersion", currentExporterVersion);

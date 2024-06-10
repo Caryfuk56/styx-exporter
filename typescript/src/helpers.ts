@@ -296,3 +296,11 @@ export const nameFromOrigin = (token: Token, prefix?: string): string => {
 
   return rd.charAt(0).toLowerCase() + rd.slice(1);
 };
+
+export const quotationMarks = (value: string): string => {
+  if (value.match(/^[0-9]+$/)) {
+    return value;
+  }
+  
+  return `"${value}"`;
+}

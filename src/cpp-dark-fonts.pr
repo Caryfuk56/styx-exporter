@@ -1,0 +1,5 @@
+{* Generate all FONTS tokens for the CPP-dark theme *}
+{[ const brandId = getBrandId(brandNames.cppDark, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": brandNames.cppDark, "id": brandId, "type": "fonts" } /]}
+
+{[ inject "fonts-renderer" context { "id": brandId } /]}
