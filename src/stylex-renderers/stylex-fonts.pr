@@ -1,0 +1,5 @@
+{* Generate fonts for stylex *}
+{[ const brandId = context brandId /]}
+{[ const tokenType = context tokenType /]}
+
+imporimport { defineVars } from "@stylexjs/stylex";

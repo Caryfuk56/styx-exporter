@@ -1,0 +1,5 @@
+{[ const THEME = brandNames.knz /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "fonts" } /]}
+
+{[ inject "stylex-colors" context { "brandId": brandId, "tokenType": "GenericToken" } /]}

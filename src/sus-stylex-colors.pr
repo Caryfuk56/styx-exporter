@@ -1,0 +1,6 @@
+{* Generate tokens definitions for stylex. The SUS theme. *}
+{[ const THEME = brandNames.sus /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "colors" } /]}
+
+{[ inject "stylex-colors" context { "brandId": brandId, "tokenType": "Color" } /]}

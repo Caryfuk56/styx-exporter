@@ -1,0 +1,19 @@
+{* Generate colors for stylex *}
+{[ const brandId = context.brandId /]}
+{[ const tokenType = context.tokenType /]}
+
+import { defineVars } from "@stylexjs/stylex";
+{[ const groups = ds.tokenGroupsOfType(tokenType, brandId) /]}
+{[ const tokensByType = ds.tokensByType(tokenType, brandId) /]}
+
+{[ for group in groups[0].subgroups]}
+{[ const tokens = filterTokens(group.name, tokensByType) /]}
+{[ const groupName = stylexGroupName(prefixByType[tokenType], group.name) /]}
+
+export const {{ groupName }} = defineVars({
+{[ for token in tokens ]}
+  {[ inject "token-name-render" context { "token": token } /]}: "var(--{[ inject "token-name-render" context { "token": token, "prefix": "Color" } /]})",
+{[/]}
+});
+
+{[/]}

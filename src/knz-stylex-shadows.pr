@@ -1,0 +1,6 @@
+{* Generate shadows tokens definitions for stylex. The KNZ theme. *}
+{[ const THEME = brandNames.knz /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "shadows" } /]}
+
+{[ inject "stylex-colors" context { "brandId": brandId, "tokenType": "Shadow" } /]}

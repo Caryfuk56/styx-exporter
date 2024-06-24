@@ -6,7 +6,7 @@
   "organization": "Ais servis",
   "homepage": "",
   "source_dir": "src",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "usesBrands": true,
   "config": {
     "sources": "sources.json",

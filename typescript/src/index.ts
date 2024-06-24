@@ -14,7 +14,7 @@ import {
   quotationMarks,
 } from "./helpers";
 import hslConvertor from "./hsl-convertor";
-import { behavior, brandNames, currentExporterVersion, stylexCategories } from "./payloads";
+import { behavior, brandNames, currentExporterVersion, prefixByType, stylexCategories } from "./payloads";
 
 // Functions registration
 Pulsar.registerFunction("currentDate", currentDate);
@@ -37,3 +37,4 @@ Pulsar.registerPayload("currentExporterVersion", currentExporterVersion);
 Pulsar.registerPayload("brandNames", brandNames);
 Pulsar.registerPayload("behavior", behavior);
 Pulsar.registerPayload("stylexCategories", stylexCategories);
+Pulsar.registerPayload("prefixByType", prefixByType);

@@ -26,3 +26,16 @@ export const stylexCategories = [
   "semantic",
   "component"
 ] as const;
+
+export const prefixByType = {
+  Color: "color",
+  Typography: "typography",
+  Radius: "radius",
+  Font: "font",
+  Measure: "measures",
+  Shadow: "shadow",
+  Border: "border",
+  Gradient: "gradient",
+  Text: "text",
+  GenericToken: "fonts",
+};

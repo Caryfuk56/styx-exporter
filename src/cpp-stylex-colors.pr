@@ -1,0 +1,6 @@
+{* Generate tokens definitions for stylex. The CPP theme. *}
+{[ const THEME = brandNames.cpp /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "colors" } /]}
+
+{[ inject "stylex-colors" context { "brandId": brandId, "tokenType": "Color" } /]}
