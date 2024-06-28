@@ -46,7 +46,7 @@
     },
     {
       "invoke": "stylex-index.pr",
-      "write_to": "stylex/tokens/index.stylex.ts"
+      "write_to": "stylex/tokens/index.ts"
     },
     {
       "invoke": "vigo-colors.pr",
