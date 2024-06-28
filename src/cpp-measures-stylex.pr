@@ -1,5 +1,6 @@
 {* Generate MEASURES stylex tokens for CPP theme *}
-{[ const brandId = getBrandId(brandNames.cpp, ds.allBrands()) /]}
-{[ inject "file-header-comment" context { "brandName": brandNames.cpp, "id": brandId, "type": "measures" } /]}
+{[ const THEME = brandNames.cpp /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "measures" } /]}
 
-{[ inject "stylex-render" context { "id": brandId, "variable": "measures" } /]}
+{[ inject "stylex-tokens" context { "brandId": brandId, "tokenType": "Measure" } /]}

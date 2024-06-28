@@ -25,6 +25,30 @@
       "write_to": "_export-info/info-fonts.txt"
     },
     {
+      "invoke": "stylex-colors.pr",
+      "write_to": "stylex/tokens/colors.stylex.ts"
+    },
+    {
+      "invoke": "stylex-measures.pr",
+      "write_to": "stylex/tokens/measures.stylex.ts"
+    },
+    {
+      "invoke": "stylex-fonts.pr",
+      "write_to": "stylex/tokens/fonts.stylex.ts"
+    },
+    {
+      "invoke": "stylex-gradients.pr",
+      "write_to": "stylex/tokens/gradients.stylex.ts"
+    },
+    {
+      "invoke": "stylex-shadows.pr",
+      "write_to": "stylex/tokens/shadows.stylex.ts"
+    },
+    {
+      "invoke": "stylex-index.pr",
+      "write_to": "stylex/tokens/index.stylex.ts"
+    },
+    {
       "invoke": "vigo-colors.pr",
       "write_to": "vigo/_colors.scss"
     },
@@ -45,64 +69,24 @@
       "write_to": "vigo/_fonts.scss"
     },
     {
-      "invoke": "vigo-stylex-colors.pr",
-      "write_to": "vigo/stylex/_colors.ts"
-    },
-    {
-      "invoke": "vigo-stylex-measures.pr",
-      "write_to": "vigo/stylex/_measures.ts"
-    },
-    {
-      "invoke": "vigo-stylex-fonts.pr",
-      "write_to": "vigo/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "vigo-stylex-gradients.pr",
-      "write_to": "vigo/stylex/_gradients.ts"
-    },
-    {
-      "invoke": "vigo-stylex-shadows.pr",
-      "write_to": "vigo/stylex/_shadows.ts"
-    },
-    {
       "invoke": "cpp-dark-colors.pr",
-      "write_to": "cpp-dark/_colors.scss"
+      "write_to": "cpp-dark/colors.scss"
     },
     {
       "invoke": "cpp-dark-measures.pr",
-      "write_to": "cpp-dark/_measures.scss"
+      "write_to": "cpp-dark/measures.scss"
     },
     {
       "invoke": "cpp-dark-gradients.pr",
-      "write_to": "cpp-dark/_gradients.scss"
+      "write_to": "cpp-dark/gradients.scss"
     },
     {
       "invoke": "cpp-dark-shadows.pr",
-      "write_to": "cpp-dark/_shadows.scss"
+      "write_to": "cpp-dark/shadows.scss"
     },
     {
       "invoke": "cpp-dark-fonts.pr",
-      "write_to": "cpp-dark/_fonts.scss"
-    },
-    {
-      "invoke": "cpp-dark-stylex-colors.pr",
-      "write_to": "cpp-dark/stylex/_colors.ts"
-    },
-    {
-      "invoke": "cpp-dark-stylex-gradients.pr",
-      "write_to": "cpp-dark/stylex/_gradients.ts"
-    },
-    {
-      "invoke": "cpp-dark-stylex-shadows.pr",
-      "write_to": "cpp-dark/stylex/_shadows.ts"
-    },
-    {
-      "invoke": "cpp-dark-stylex-fonts.pr",
-      "write_to": "cpp-dark/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "cpp-dark-stylex-measures.pr",
-      "write_to": "cpp-dark/stylex/_measures.ts"
+      "write_to": "cpp-dark/fonts.scss"
     },
     {
       "invoke": "cpp-colors.pr",
@@ -125,26 +109,6 @@
       "write_to": "cpp/_fonts.scss"
     },
     {
-      "invoke": "cpp-stylex-colors.pr",
-      "write_to": "cpp/stylex/_colors.ts"
-    },
-    {
-      "invoke": "cpp-stylex-gradients.pr",
-      "write_to": "cpp/stylex/_gradients.ts"
-    },
-    {
-      "invoke": "cpp-stylex-shadows.pr",
-      "write_to": "cpp/stylex/_shadows.ts"
-    },
-    {
-      "invoke": "cpp-stylex-fonts.pr",
-      "write_to": "cpp/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "cpp-stylex-measures.pr",
-      "write_to": "cpp/stylex/_measures.ts"
-    },
-    {
       "invoke": "koop-dark-colors.pr",
       "write_to": "koop-dark/_colors.scss"
     },
@@ -163,26 +127,6 @@
     {
       "invoke": "koop-dark-fonts.pr",
       "write_to": "koop-dark/_fonts.scss"
-    },
-    {
-      "invoke": "koop-dark-stylex-colors.pr",
-      "write_to": "koop-dark/stylex/_colors.ts"
-    },
-    {
-      "invoke": "koop-dark-stylex-gradients.pr",
-      "write_to": "koop-dark/stylex/_gradients.ts"
-    },
-    {
-      "invoke": "koop-dark-stylex-shadows.pr",
-      "write_to": "koop-dark/stylex/_shadows.ts"
-    },
-    {
-      "invoke": "koop-dark-stylex-fonts.pr",
-      "write_to": "koop-dark/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "koop-dark-stylex-measures.pr",
-      "write_to": "koop-dark/stylex/_measures.ts"
     },
     {
       "invoke": "koop-colors.pr",
@@ -205,25 +149,6 @@
       "write_to": "koop/_fonts.scss"
     },
     {
-      "invoke": "koop-stylex-colors.pr",
-      "write_to": "koop/stylex/_colors.ts"
-    },
-    {
-      "invoke": "koop-stylex-gradients.pr",
-      "write_to": "koop/stylex/_gradients.ts"
-    },{
-      "invoke": "koop-stylex-shadows.pr",
-      "write_to": "koop/stylex/_shadows.ts"
-    },
-    {
-      "invoke": "koop-stylex-fonts.pr",
-      "write_to": "koop/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "koop-stylex-measures.pr",
-      "write_to": "koop/stylex/_measures.ts"
-    },
-    {
       "invoke": "knz-colors.pr",
       "write_to": "knz/_colors.scss"
     },
@@ -244,26 +169,6 @@
       "write_to": "knz/_shadows.scss"
     },
     {
-      "invoke": "knz-stylex-colors.pr",
-      "write_to": "knz/stylex/_colors.ts"
-    },
-    {
-      "invoke": "knz-stylex-gradients.pr",
-      "write_to": "knz/stylex/_gradients.ts"
-    },
-    {
-      "invoke": "knz-stylex-shadows.pr",
-      "write_to": "knz/stylex/_shadows.ts"
-    },
-    {
-      "invoke": "knz-stylex-fonts.pr",
-      "write_to": "knz/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "knz-stylex-measures.pr",
-      "write_to": "knz/stylex/_measures.ts"
-    },
-    {
       "invoke": "sus-colors.pr",
       "write_to": "sus/_colors.scss"
     },
@@ -282,26 +187,6 @@
     {
       "invoke": "sus-fonts.pr",
       "write_to": "sus/_fonts.scss"
-    },
-    {
-      "invoke": "sus-stylex-colors.pr",
-      "write_to": "sus/stylex/_colors.ts"
-    },
-    {
-      "invoke": "sus-stylex-gradients.pr",
-      "write_to": "sus/stylex/_gradients.ts"
-    },
-    {
-      "invoke": "sus-stylex-shadows.pr",
-      "write_to": "sus/stylex/_shadows.ts"
-    },
-    {
-      "invoke": "sus-stylex-fonts.pr",
-      "write_to": "sus/stylex/_fonts.ts"
-    },
-    {
-      "invoke": "sus-stylex-measures.pr",
-      "write_to": "sus/stylex/_measures.ts"
     }
   ]
 }

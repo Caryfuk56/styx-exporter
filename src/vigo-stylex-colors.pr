@@ -1,6 +1,0 @@
-{* Generate tokens definitions for stylex. The VIGo theme. *}
-{[ const THEME = brandNames.vigo /]}
-{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
-{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "colors" } /]}
-
-{[ inject "stylex-colors" context { "brandId": brandId, "tokenType": "Color" } /]}

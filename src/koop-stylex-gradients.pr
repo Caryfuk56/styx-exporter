@@ -1,6 +1,0 @@
-{* Generate tokens definitions for stylex. The KOOP theme. *}
-{[ const THEME = brandNames.koop /]}
-{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
-{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "gradients" } /]}
-
-{[ inject "stylex-colors" context { "brandId": brandId, "tokenType": "Gradient" } /]}

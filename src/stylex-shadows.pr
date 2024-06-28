@@ -1,20 +1,6 @@
-{* Generate SHADOWS stylex tokens with "current" theme *}
-{[ const currentBrand = ds.currentBrand() /]}
-{[ inject "file-header-comment" context { "brandName": "stylex", "id": currentBrand.id, "type": "shadows" } /]}
+{* Generate shadows tokens definitions for stylex. The CPP theme. *}
+{[ const THEME = brandNames.vigo /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "shadows" } /]}
 
-import { defineVars } from "@stylexjs/stylex";
-{[ const groups = ds.tokenGroupsOfType("Shadow", currentBrand.id) /]}
-{[ const tokensByType = ds.tokensByType("Shadow", currentBrand.id) /]}
-
-{[ for group in groups[0].subgroups ]}
-{[ const tokens = filterTokens(group.name, tokensByType) /]}
-{[ const groupName = stylexGroupName("shadow", group.name) /]}
-
-
-export const {{ groupName }} = defineVars({
-{[  for token in tokens]}
-  {[ inject "token-name-render" context { "token": token } /]}: "var(--{[ inject "token-name-render" context { "token": token } /]})",
-{[/]}
-});
-
-{[/]}
+{[ inject "stylex-tokens" context { "brandId": brandId, "tokenType": "Shadow" } /]}

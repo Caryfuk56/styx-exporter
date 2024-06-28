@@ -279,6 +279,9 @@ export const nameFromOrigin = (token: Token, prefix?: string): string => {
     return "";
   }
 
+  // console.log(token.origin?.name)
+  // console.log(prefix)
+
   const rm = token.origin?.name?.split("/").map((item) => {
     return item
       .split(/\-|\s/g)

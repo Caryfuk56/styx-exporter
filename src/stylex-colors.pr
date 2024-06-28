@@ -1,21 +1,6 @@
-{* Generate COLORS stylex tokens for VIGo theme *}
-{[ const brandId = getBrandId(brandNames.vigo, ds.allBrands()) /]}
-{[ inject "file-header-comment" context { "brandName": brandNames.vigo, "id": brandId, "type": "colors" } /]}
+{* Generate tokens definitions for stylex. The VIGo theme. *}
+{[ const THEME = brandNames.vigo /]}
+{[ const brandId = getBrandId(THEME, ds.allBrands()) /]}
+{[ inject "file-header-comment" context { "brandName": THEME, "id": brandId, "type": "colors" } /]}
 
-{[ const currentBrand = ds.currentBrand() /]}
-
-import { defineVars } from "@stylexjs/stylex";
-{[ const groups = ds.tokenGroupsOfType("Color", currentBrand.id) /]}
-{[ const tokensByType = ds.tokensByType("Color", currentBrand.id) /]}
-
-{[ for group in groups[0].subgroups ]}
-{[ const tokens = filterTokens(group.name, tokensByType) /]}
-{[ const groupName = stylexGroupName("colors", group.name) /]}
-
-export const {{ groupName }} = defineVars({
-{[ for token in tokens ]}
-  {[ inject "token-name-render" context { "token": token } /]}: "var(--{[ inject "token-name-render" context { "token": token, "prefix": "Color" } /]})",
-{[/]}
-});
-
-{[/]}
+{[ inject "stylex-tokens" context { "brandId": brandId, "tokenType": "Color" } /]}
